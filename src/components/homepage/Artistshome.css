@@ -141,3 +141,37 @@
     padding: 5px 10px 5px 10px ;
 
 }
+
+
+
+@media screen and (max-width: 768px) {
+
+
+  .home_artists_section{
+
+    padding: 20px 10px 10px 10px;
+    margin:10px 0px 0px 0px ;
+  }
+  .home_artist_name_items{
+    font-size: 32px;
+    bottom: 10px;
+  }
+  .bottom_row{
+    flex-direction: column-reverse;
+
+    gap: 20px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .left_text{
+    font-size: 24px;
+    padding: 3px 6px 3px 6px ;
+  }
+  .full_lineup_button{
+    font-size: 24px;
+    padding: 3px 6px 3px 6px ;
+  }
+
+
+}

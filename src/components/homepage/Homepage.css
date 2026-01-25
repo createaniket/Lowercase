@@ -134,3 +134,29 @@ font-weight: 700;
   width: 150px;
   height: auto;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .vdo_home_content_main {
+        flex-direction: column;
+        top: 25vh;
+    }
+
+    .vdo_home_content_logo, .vdo_home_content_text {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .vdo_home_content_text {
+        margin-top: 20px;
+    }
+
+    .background-video {
+     height: 100vh;
+    
+    
+    }
+    
+}

@@ -107,6 +107,19 @@
   background-color: rgb(69, 60, 21); 
   width: 70%; 
   margin-left: 40px;
+}
 
-;
+
+@media screen and (max-width: 768px) {
+
+
+  .moder_photos_heading {
+    font-size: 36px;
+  }
+
+  .moder_photos_btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
 }
