@@ -2,11 +2,11 @@
 .home_artists_section {
   position: relative;
   width: 100%;
-  margin:100px 0px 50px 0px ;
+  margin:10px 0px 50px 0px ;
   padding: 40px 20px ;
   background-color: transparent;
   font-family: Helvetica, sans-serif;
-  overflow: hidden; /* Hide overflow for marquee */
+
 }
 
 /* 🎵 Marquee Background */
@@ -48,6 +48,21 @@
   padding-right: 100px; /* spacing between repeats */
 }
 
+
+.home_artists_section_heading{
+
+
+  padding: 10px 15px;
+  background-color: yellow;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+
 /* 🔁 Marquee Animations */
 @keyframes marquee {
   0% {
@@ -72,7 +87,7 @@
   position: relative;
   z-index: 1; /* on top */
   background-color: transparent;
-  margin-top: 50px;
+
 }
 
 /* Responsive adjustments */
@@ -94,10 +109,11 @@
 .home_artist_name_items{
   font-size: 54px;
   position: relative;
-  bottom: 100px;
+  bottom: 20px;
   background-color: yellow;
   display: inline-block;
-  padding: 10px 10px 0px 10px;
+  border-radius: 5px;
+
 }
 
 .bottom_row{

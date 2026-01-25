@@ -8,7 +8,7 @@ import Artists from "./Artistshome";
 // import EventAlbums from "../photos/EventAlbums";
 import Prefooter from "../footer/Prefooter";
 
-
+import HomeNewGallery from "./HomeNewGallery";
 
 // import FatosmaImg from "../assests/fatsoma_home.jpg";
 // import Contact from "./Contact";
@@ -16,16 +16,12 @@ import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
 import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
 import BrandCreator from "./BrandCreator";
-import PhotoWall from "./PhotoWall";
+// import PhotoWall from "./PhotoWall";
 // import PhotoWallSkeleton from "./PhotoWallSkeleton";
 // import { lazy , Suspense } from "react";
 
-
-
 // import Supportinghome from "./Supportinghome";
 // import Instagidphotos from "../photos/Instagidphotos";
-
-
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,11 +30,10 @@ const Homepage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-       const scrollY = window.scrollY;
-      const scrollPosition  = window.scrollY; // Current scroll position
+      const scrollY = window.scrollY;
+      const scrollPosition = window.scrollY; // Current scroll position
       const viewportHeight = window.innerHeight; // Total viewport height
       const triggerHeight = viewportHeight * 0.22; // 22% of the viewport height
-      
 
       if (scrollPosition > triggerHeight) {
         setIsVisible(true);
@@ -52,9 +47,7 @@ const Homepage = () => {
       if (scrollY > triggerHeight) {
         setIsVisible(true);
       }
-
     };
-
 
     window.addEventListener("scroll", handleScroll);
 
@@ -82,15 +75,14 @@ const Homepage = () => {
           className={`vdo_home_content_main ${isVisible ? "visible" : ""}`}
           ref={sectionRef}
         >
-         <div className="vdo_home_content_logo">
-          <img
-            src={LowerCaseLogo}
-            alt="Lowercase Logo"
-            ref={logoRef}
-            className="rotating-logo"
-          />
-        </div>
-
+          <div className="vdo_home_content_logo">
+            <img
+              src={LowerCaseLogo}
+              alt="Lowercase Logo"
+              ref={logoRef}
+              className="rotating-logo"
+            />
+          </div>
 
           <div className="vdo_home_content_text">
             <p className="vdoheadhomepage">
@@ -115,8 +107,6 @@ const Homepage = () => {
 
       <Brandslogocarousel />
       <Lowercaseticketwidget />
-  
-
 
       <Modernphotos />
 
@@ -124,16 +114,13 @@ const Homepage = () => {
 
       {/* <EventAlbums /> */}
 
-    
-      <PhotoWall/>
-      
-      
-      
+      {/* <PhotoWall/> */}
+
+      <HomeNewGallery />
 
       <BrandCreator />
 
       <Artists />
-
 
       {/* <Supportinghome /> */}
 
@@ -144,16 +131,10 @@ const Homepage = () => {
       <InstagramEmbed />
 
       {/* <Contact /> */}
-      
+
       <Prefooter />
 
       <Footer />
-    
-    
-     
-      
-      
-      
     </div>
   );
 };

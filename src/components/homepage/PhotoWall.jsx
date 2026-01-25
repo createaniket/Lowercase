@@ -419,6 +419,7 @@ export default function PhotoWall() {
         const response = await axios.get(
           `${BaseUrl}/api/album/get/68d59298421821f3541ccf16`
         );
+        console.log("the response of the albums", response.data.data);
         setImageList(response.data?.data.photos || []);
       } catch (err) {
         console.error("Error fetching images:", err);

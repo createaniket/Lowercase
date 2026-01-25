@@ -1,0 +1,73 @@
+.galleryWrapper {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 50px 20px;
+  }
+  
+  /* ✅ Outer stack */
+  .galleryStack {
+    width: min(1200px, 96vw);
+    display: grid;
+    gap: 10px;
+  }
+  
+  /* ✅ Each row is a separate grid (key fix) */
+  .galleryRow {
+    display: grid;
+    /* grid-template-rows: 240px; */
+  
+    grid-template-columns: var(--c1, 1fr) var(--c2, 1fr) var(--c3, 1fr)
+      var(--c4, 1fr) var(--c5, 1fr);
+  
+    gap: 10px;
+    transition: grid-template-columns 300ms ease;
+  }
+  
+  /* ✅ TILE BASE */
+  .tile {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    position: relative;
+    transition: transform 250ms ease;
+  }
+  
+  /* ✅ image */
+  .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter 250ms ease, transform 250ms ease;
+  }
+  
+  /* ✅ Dim others (same as before) */
+  .galleryStack.hasHover .tile.dimmed img {
+    filter: grayscale(1) brightness(0.75);
+  }
+  
+  /* ✅ Hovered */
+  .tile.hovered {
+    z-index: 10;
+  }
+  
+  .tile.hovered img {
+    filter: grayscale(0);
+    transform: scale(1.04);
+  
+  
+  }
+  
+  /* ✅ Mobile */
+  @media (max-width: 900px) {
+    .galleryRow {
+      grid-template-rows: 180px;
+      gap: 14px;
+    }
+  
+    .galleryStack {
+      gap: 14px;
+    }
+  }
