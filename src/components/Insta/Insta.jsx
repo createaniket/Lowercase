@@ -1,4 +1,5 @@
 import React from 'react'
+import './Insta.css'
 
 const Insta = () => {
   return (

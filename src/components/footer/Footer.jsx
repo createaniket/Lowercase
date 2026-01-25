@@ -24,10 +24,8 @@ const Footer = () => {
 
         <div className="footer">
           <div className="footer-box1">
-
             <ul>
-
-            <li>
+              <li>
                 <Link to="/about">Home</Link>
               </li>
 
@@ -54,37 +52,35 @@ const Footer = () => {
           </div>
 
           <div className="footer-box4">
-     
-     <ul>
-       <li>
-         <Link to="/">Email us</Link>
-       </li>
-       <li>
-         <Link to="/">Group Bookings</Link>
-       </li>
-       <li>
-         <Link to="/">University Partners</Link>
-       </li>
-       <li>
-         <Link to="/">Birthdays</Link>
-       </li>{" "}
-       <li>
-         <Link to="/">Societies</Link>
-       </li>{" "}
-       <li>
-         <Link to="/">FAQ's</Link>
-       </li>
-       <li>
-         <Link to="/">Playlist</Link>
-       </li>
-       <li>
-         <Link to="/">Our Story</Link>
-       </li>
-     </ul>
-   </div>
+            <ul>
+              <li>
+                <Link to="/">Email us</Link>
+              </li>
+              <li>
+                <Link to="/">Group Bookings</Link>
+              </li>
+              <li>
+                <Link to="/">University Partners</Link>
+              </li>
+              <li>
+                <Link to="/">Birthdays</Link>
+              </li>{" "}
+              <li>
+                <Link to="/">Societies</Link>
+              </li>{" "}
+              <li>
+                <Link to="/">FAQ's</Link>
+              </li>
+              <li>
+                <Link to="/">Playlist</Link>
+              </li>
+              <li>
+                <Link to="/">Our Story</Link>
+              </li>
+            </ul>
+          </div>
 
           <div className="footer-box4">
-     
             <ul>
               <li>
                 <Link to="/">Carrers</Link>
@@ -107,12 +103,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-box2">
-
-          </div>
+          {/* <div className="footer-box2"></div> */}
 
           <div className="footer-box1">
-
             <div className="social-icons">
               <ul>
                 <li>
@@ -120,9 +113,14 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <a            href="https://wa.me/447568564663"
-                  target="_blank"
-                  rel="noreferrer"> Whatsapp </a>
+                  <a
+                    href="https://wa.me/447568564663"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {" "}
+                    Whatsapp{" "}
+                  </a>
                 </li>
 
                 <li>
@@ -148,7 +146,8 @@ const Footer = () => {
 
       <div className="bottom_footer">
         <div className="lisenced-note">
-        <span> ©</span>   2024 LOWERCASE EVENTS, ALL RIGHTS RESERVED. WEB DEVELOPMENT <a href="/">LOWERCASE AGENCY</a>
+          <span> ©</span> 2024 LOWERCASE EVENTS, ALL RIGHTS RESERVED. WEB
+          DEVELOPMENT <a href="/">LOWERCASE AGENCY</a>
         </div>
 
         <ul>
