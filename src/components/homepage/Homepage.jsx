@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Homepage.css";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
-import LowerCaseLogo from "../assests/LowercaseLogoRect.png";
+import LowerCaseLogo from "../assests/Lowercase-Events-Logo-Web.png";
 import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
 import Artists from "./Artistshome";
 
@@ -14,6 +14,9 @@ import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
 import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
 import BrandCreator from "./BrandCreator";
+import { Typewriter } from "react-simple-typewriter";
+
+
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,14 +57,25 @@ const Homepage = () => {
           <div className="vdo_home_content_text">
             <p className="vdohome_contentone">
               Lowercase Events exists for the nights you remember and the ones
-              you don’t. We blend the right music, the right crowd, and the
+              you don’t. <br /> We blend the right music, the right crowd, and the
               right atmosphere to create experiences that feel authentic,
               culturally relevant, and intentional.
             </p>
 
-            <p className="vdoheadhomepage">
-              Trusted by leading venues, artists, and partners.
-            </p>
+            <div className="vdoheadhomepage">
+      <Typewriter
+                                words={[ 'Trusted by leading venues, artists, and partners.']}
+                                loop={50}
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={80}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                     
+                    
+                              />
+
+            </div>
           </div>
         </div>
       </div>
