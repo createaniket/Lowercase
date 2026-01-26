@@ -104,7 +104,7 @@
     }
     
     .prefooter_main_right {
-        width: 90vw;
+        width: 100%;
         text-align: center;
     }
     
@@ -114,10 +114,18 @@
 
     .prefooter_main_left img{
 
-        width: 90vw;
+        width:100%;
         object-fit: inherit;
 
     }
 
+    .prefooter_main_left_bottom img, .prefooter_main_left_top img {
+      height: auto;
+  }
+
+  .prefooter_main_left img {
+ 
+    margin: 0px 00;
+}
 
 }

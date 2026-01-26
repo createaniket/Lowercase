@@ -1,7 +1,7 @@
 import React from "react";
 import "./Prefooter.css";
-import FatosmaImg from "../assests/fatsoma_home.jpg";
-import FatsomaImg2 from "../assests/fatsoma_logo2.png";
+import FatosmaImg from "../assests/prefooter/fatsoma.jpg";
+import FatsomaImg2 from "../assests/prefooter/bric.jpg";
 
 const Prefooter = () => {
   return (

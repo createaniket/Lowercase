@@ -51,15 +51,13 @@
 
 .home_artists_section_heading{
 
-
-  padding: 10px 15px;
-  background-color: yellow;
-  font-size: 24px;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000;
+    /* color: #fff; */
+    padding: 10px;
+    font-size: 48px;
+    font-weight: 800;
+    background-color: yellow;
+    display: inline;
+    border-radius: 5px;
 }
 
 
@@ -108,10 +106,7 @@
 }
 .home_artist_name_items{
   font-size: 54px;
-  position: relative;
   bottom: 20px;
-  background-color: yellow;
-  display: inline-block;
   border-radius: 5px;
 
 }
@@ -137,7 +132,7 @@
 .full_lineup_button{
    font-size: 36px;
   color: black;
-  background-color: yellow;
+
     padding: 5px 10px 5px 10px ;
 
 }
@@ -154,7 +149,9 @@
   }
   .home_artist_name_items{
     font-size: 32px;
-    bottom: 10px;
+
+    margin: 15px auto;
+    text-align: center;
   }
   .bottom_row{
     flex-direction: column-reverse;
@@ -173,5 +170,15 @@
     padding: 3px 6px 3px 6px ;
   }
 
+
+  .home_artists_section_heading{
+
+    /* color: #fff; */
+    padding: 10px;
+    font-size: 36px;
+    width: 100%;
+    margin: 00 auto;
+
+}
 
 }

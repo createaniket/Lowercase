@@ -72,7 +72,8 @@ const Homepage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const triggerHeight = window.innerHeight * 0.22;
+      const triggerHeight = window.innerHeight * 0.01;  
+      // instead of scroll make 2sec wait efore showing and 5 sec see then hide.
 
       // ✅ If user scrolls past trigger → show
       if (scrollY > triggerHeight) {

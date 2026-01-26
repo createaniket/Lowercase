@@ -48,3 +48,13 @@
 .navbar-items:hover {
     color: #ffcc00; /* Optional hover effect */
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .navbar-bar{
+
+        width: 90%;
+    }
+
+}
