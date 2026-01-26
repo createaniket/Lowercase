@@ -35,7 +35,7 @@
 }
 
 .tkt_events_wdgts_top_right{
-    margin: 20px auto;
+    margin: 20px 0;
 }
 .tkt_events_wdgts_top_right  span{
     color: yellow !important;
@@ -46,7 +46,7 @@
 
   .tkt_events_wdgts_top_left{
 
-    margin: 20px auto;
+    margin: 20px 0;
   }
 
 
@@ -54,7 +54,7 @@
 
     .tkt_events_wdgts_top{
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .tkt_event_wdgt_btn{
