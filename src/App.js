@@ -26,6 +26,7 @@ import Societies from "./components/footer/Societies";
 import Venues from "./components/forms/Venues";
 import UGR from "./components/forms/UGR";
 import Advertise from "./components/forms/Advertise";
+import UGC from "./components/forms/UGC";
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
         <Route path="/venues" element={<Venues />} />
 
         <Route path="/ugr" element={<UGR />} />
+        <Route path="/ugc" element={<UGC />} />
+
+
+
         <Route path="/advertise" element={<Advertise />} />
 
         <Route path="/about" element={<About />} />

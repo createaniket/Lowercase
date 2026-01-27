@@ -48,6 +48,7 @@ const Footer = () => {
               <li>
                 <Link to="/collab">Brands</Link>
               </li>
+
             </ul>
           </div>
 
@@ -68,6 +69,10 @@ const Footer = () => {
               <li>
                 <Link to="/socities">Societies</Link>
               </li>{" "}
+
+              <li>
+                <Link to="/ugc">UGC</Link>
+              </li>
             </ul>
           </div>
 
@@ -82,9 +87,6 @@ const Footer = () => {
               <li>
                 <Link to="/ugr">UGR</Link>
               </li>
-              <li>
-                <Link to="/">University Partners</Link>
-              </li>{" "}
               <li>
                 <Link to="/">University Partners</Link>
               </li>{" "}

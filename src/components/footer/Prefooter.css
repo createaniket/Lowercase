@@ -109,6 +109,19 @@
   cursor: pointer;
 }
 
+
+
+/* FOR CHECKBOX START */
+
+/* CHECKBOX */
+.prefooter_checkbox span {
+ padding: 00 5px;
+}
+
+
+
+/* FOR CHECK BOX END */
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .prefooter {

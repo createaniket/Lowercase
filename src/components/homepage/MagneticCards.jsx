@@ -1,24 +1,18 @@
 import React from "react";
 import "./magnetic.css";
 
-
 import img1 from "../assests/Artists/Artist-one.jpg";
 import img2 from "../assests/Artists/Artist-Two.jpg"; //Drake
 import img3 from "../assests/Artists/Artist-Three.jpg";
 import img4 from "../assests/Artists/Artist-Four.jpg";
 import img5 from "../assests/Artists/Artist-Five.jpg"; // Aboogie with a hoodie
 
-
-
-
-
-
 const items = [
   { id: 1, img: img1, Title: "⁠⁠PARTYNEXTDOOR" },
   { id: 2, img: img2, Title: "⁠⁠DRAKE" },
   { id: 3, img: img3, Title: "⁠⁠KEHLANI" },
   { id: 4, img: img4, Title: "⁠⁠GUNNA" },
-  { id: 5, img: img5, Title: "A BOOGIE WIT THA HOODIE" },
+  { id: 5, img: img5, Title: "A BOOGIE wit da hoodie" },
 ];
 
 export default function MagneticCards() {
@@ -57,6 +51,7 @@ export default function MagneticCards() {
             onMouseLeave={handleLeave}
           >
             <img src={item.img} alt="card" />
+            <p className="artist_name"> {item.Title} </p>
           </div>
         ))}
       </div>

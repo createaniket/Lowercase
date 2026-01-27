@@ -37,6 +37,13 @@ const Prefooter = () => {
               type="text"
               placeholder="Enter your city*"
             />
+
+{/* ✅ CHECKBOX */}
+<label className="prefooter_checkbox">
+  <input type="checkbox" required />
+  <span>Join the announcement here</span>
+</label>
+
           </form>
 
           <p className="prefooter_privacy">
