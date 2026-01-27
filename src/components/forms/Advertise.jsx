@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
+import Navbar from "../navbar/Navbar";
+import Prefooter from "../footer/Prefooter";
+import Footer from "../footer/Footer";
 
 const Advertise = () => {
   const [data, setData] = useState({
@@ -18,6 +21,11 @@ const Advertise = () => {
   };
 
   return (
+
+    <>
+    
+    <Navbar />
+ 
     <form className="bwForm" onSubmit={submit}>
       <h2>Advertise With Us</h2>
       <input placeholder="Full Name" onChange={e=>setData({...data,fullName:e.target.value})}/>
@@ -26,6 +34,13 @@ const Advertise = () => {
       <textarea placeholder="Brand / Campaign Details" onChange={e=>setData({...data,message:e.target.value})}/>
       <button>Submit</button>
     </form>
+
+
+    <Prefooter />
+    <Footer />
+
+    
+    </>
   );
 };
 

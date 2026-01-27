@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
+import Navbar from "../navbar/Navbar";
+import Prefooter from "../footer/Prefooter";
+import Footer from "../footer/Footer";
 
 const ContactUs = () => {
   const [data, setData] = useState({
@@ -21,6 +24,10 @@ const ContactUs = () => {
   };
 
   return (
+
+    <>
+    <Navbar />
+    <div className="contactUsPage">
     <form className="bwForm" onSubmit={submitForm}>
       <h2>Contact Us</h2>
       <input name="fullName" placeholder="Full Name" onChange={handleChange} />
@@ -29,6 +36,11 @@ const ContactUs = () => {
       <textarea name="message" placeholder="Your Message" onChange={handleChange} />
       <button>Submit</button>
     </form>
+
+    </div>
+    <Prefooter />
+    <Footer />
+    </>
   );
 };
 

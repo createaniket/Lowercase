@@ -19,12 +19,31 @@ import Login from "./components/admin/Album/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PrivacyPolicy from "./components/Pages/Privacypolicies/PrivacyPolicy";
 import TermsAndConditions from "./components/Pages/Termsandconditions/TermsAndConditions";
+import ContactUs from "./components/forms/ContactUs";
+import GroupBookings from "./components/forms/GroupBookings";
+import Birthdays from "./components/footer/Birthdays";
+import Societies from "./components/footer/Societies";
+import Venues from "./components/forms/Venues";
+import UGR from "./components/forms/UGR";
+import Advertise from "./components/forms/Advertise";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/group-bookings" element={<GroupBookings />} />
+
+        <Route path="/birthdays" element={<Birthdays />} />
+
+        <Route path="/socities" element={<Societies />} />
+
+        <Route path="/venues" element={<Venues />} />
+
+        <Route path="/ugr" element={<UGR />} />
+        <Route path="/advertise" element={<Advertise />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/newartist" element={<NewArtist />} />

@@ -1,0 +1,57 @@
+.venuesWrapper {
+    background: #000;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 40px 20px;
+  }
+  
+  .bwForm {
+    max-width: 420px;
+    width: 100%;
+    color: #fff;
+  }
+  
+  .bwForm h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+  
+  .bwForm input,
+  .bwForm textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .bwForm input::placeholder,
+  .bwForm textarea::placeholder {
+    color: #888;
+  }
+  
+  .bwForm button {
+    width: 100%;
+    background: #fff;
+    color: #000;
+    padding: 12px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  
+  .bwForm button:hover {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  

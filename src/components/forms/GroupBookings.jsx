@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
+import Navbar from "../navbar/Navbar";
+import Prefooter from "../footer/Prefooter";
+import Footer from "../footer/Footer";
 
 const GroupBookings = () => {
   const [data, setData] = useState({
@@ -18,6 +21,14 @@ const GroupBookings = () => {
   };
 
   return (
+
+    <>
+
+    <Navbar />
+
+    <div className="groupbookings_page">
+
+
     <form className="bwForm" onSubmit={submit}>
       <h2>Group Bookings</h2>
       <input placeholder="Full Name" onChange={e=>setData({...data,fullName:e.target.value})}/>
@@ -26,6 +37,11 @@ const GroupBookings = () => {
       <textarea placeholder="Booking Details" onChange={e=>setData({...data,message:e.target.value})}/>
       <button>Submit</button>
     </form>
+    </div>
+
+    <Prefooter />
+    <Footer />
+    </>
   );
 };
 

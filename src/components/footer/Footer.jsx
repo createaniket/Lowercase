@@ -54,19 +54,19 @@ const Footer = () => {
           <div className="footer-box4">
             <ul>
               <li>
-                <Link to="/">Contact Us</Link>
+                <Link to="/contact">Contact Us</Link>
               </li>
               <li>
                 <Link to="/">FAQ's</Link>
               </li>
               <li>
-                <Link to="/">Group Bookings</Link>
+                <Link to="/group-bookings">Group Bookings</Link>
               </li>
               <li>
-                <Link to="/">Birthdays</Link>
+                <Link to="/birthdays">Birthdays</Link>
               </li>{" "}
               <li>
-                <Link to="/">Societies</Link>
+                <Link to="/socities">Societies</Link>
               </li>{" "}
             </ul>
           </div>
@@ -74,13 +74,13 @@ const Footer = () => {
           <div className="footer-box4">
             <ul>
               <li>
-                <Link to="/">Venues</Link>
+                <Link to="/venues">Venues</Link>
               </li>
               <li>
                 <Link to="/">Our Network</Link>
               </li>
               <li>
-                <Link to="/">UGR</Link>
+                <Link to="/ugr">UGR</Link>
               </li>
               <li>
                 <Link to="/">University Partners</Link>
