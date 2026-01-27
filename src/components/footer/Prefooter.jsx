@@ -5,63 +5,47 @@ import FatsomaImg2 from "../assests/prefooter/bric.jpg";
 
 const Prefooter = () => {
   return (
-    <div>
+    <section className="prefooter">
       <div className="prefooter_main">
+        {/* LEFT */}
         <div className="prefooter_main_left">
-          <div className="prefooter_main_left_top">
-            <img src={FatosmaImg} alt="" />
-          </div>
-
-          <div className="prefooter_main_left_bottom">
-          <img src={FatsomaImg2} alt="" />
-          </div>
+          <img src={FatosmaImg} alt="Partner 1" />
+          <img src={FatsomaImg2} alt="Partner 2" />
         </div>
 
-
-
-
+        {/* RIGHT */}
         <div className="prefooter_main_right">
-          <div className="prefooter_main_right_top">
+          <h2 className="prefooter_heading">
+            Join the announcement here
+          </h2>
 
-            <p className="prefooter_right_top_head">
-              Join the announcement here
-            </p>
+          <p className="prefooter_subheading">
+            From zero to lit in one click –{" "}
+            <strong>Lowercase Events</strong> got you!
+          </p>
 
-            <p className="prefooter_right_bottom_head">
-              From zero to lit in one click - <strong>Lowercase Events </strong>{" "}
-              got you!
-            </p>
-
-          </div>
-
-          <div className="prefooter_main_right_middle">
-            <div className="prefooter_formform">
-              <form action="">
-
-                <div className="preefooter_right_form_top">
-
-                  <input type="text"  placeholder="Enter your number*"/>
-                  <button className="prefooter_sbmtbtn">Submit</button>
-                </div>
-
-                 <div className="preefooter_right_form_btm">
-
-
-                
-                <input type="text" placeholder="Enter your city*" />
-              </div>
-              </form>
+          <form className="prefooter_form">
+            <div className="prefooter_form_row">
+              <input
+                type="tel"
+                placeholder="Enter your number*"
+              />
+              <button type="submit">Submit</button>
             </div>
-          </div>
 
-          <div className="prefooter_main_right_bottom">
-            <p className="prefooter_bottom_text">
-              By submitting this form, you are agreeing to our Privacy Policy.
-            </p>
-          </div>
+            <input
+              type="text"
+              placeholder="Enter your city*"
+            />
+          </form>
+
+          <p className="prefooter_privacy">
+            By submitting this form, you agree to our{" "}
+            <span>Privacy Policy</span>.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
