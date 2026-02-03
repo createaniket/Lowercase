@@ -3,7 +3,7 @@ import "./Prefooter.css";
 import FatosmaImg from "../assests/prefooter/fatsoma.jpg";
 // import FatsomaImg2 from "../assests/prefooter/bric.jpg";
 
-import Yfg from "../assests/prefooter/Yfg.jpg";
+import Yfg from "../assests/prefooter/yfg.jpg";
 
 const Prefooter = () => {
   return (
