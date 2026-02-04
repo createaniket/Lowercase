@@ -94,7 +94,7 @@ const Footer = () => {
                 <Link to="/">Advertise with us</Link>
               </li>
               <li>
-                <Link to="/">Careers</Link>
+                <Link to="/careers">Careers</Link>
               </li>
             </ul>
           </div>

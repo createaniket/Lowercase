@@ -1,88 +1,144 @@
 import React, { useState } from "react";
 import "./UGC.css";
 import axios from "axios";
+
 import Navbar from "../navbar/Navbar";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 
 const UGC = () => {
-  const [data, setData] = useState({
-    fullName: "",
-    mobile: "",
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
     email: "",
-    message: "",
-    formType: "UGC / Influencers",
+    data: "",
+    formType: "ugc-influencer",
   });
 
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+
+  const [loading, setLoading] = useState(false);
+
+  // Handle Input Change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle Submit
   const submit = async (e) => {
     e.preventDefault();
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.phone) {
+      alert("Please fill all required fields");
+      return;
+    }
+
     try {
-      await axios.post("/api/forms/submit", data);
+      setLoading(true);
+
+      const response = await axios.post(
+        `${baseUrl}/api/form/${formData.formType}`,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          data: formData.data,
+        }
+      );
+
+      console.log("Response:", response.data);
+
       alert("UGC enquiry sent 🎥");
-      setData({
-        fullName: "",
-        mobile: "",
+
+      // Reset
+      setFormData({
+        name: "",
+        phone: "",
         email: "",
-        message: "",
-        formType: "UGC / Influencers",
+        data: "",
+        formType: "ugc-influencer",
       });
-    } catch (err) {
+
+    } catch (error) {
+      console.error("Error:", error);
+
       alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-
     <>
+      <Navbar />
 
-    <Navbar />
-    <div className="ugcWrapper">
-      <form className="bwForm" onSubmit={submit}>
-        <h2>Creators & Influencers</h2>
-        <p className="subtitle">
-          Collaborate with Lowercase Events — gigs, promos & content partnerships.
-        </p>
+      <div className="ugcWrapper">
 
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={data.fullName}
-          onChange={(e) => setData({ ...data, fullName: e.target.value })}
-          required
-        />
+        <form className="bwForm" onSubmit={submit}>
 
-        <input
-          type="tel"
-          placeholder="Mobile Number"
-          value={data.mobile}
-          onChange={(e) => setData({ ...data, mobile: e.target.value })}
-          required
-        />
+          <h2>Creators & Influencers</h2>
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          value={data.email}
-          onChange={(e) => setData({ ...data, email: e.target.value })}
-          required
-        />
+          <p className="subtitle">
+            Collaborate with Lowercase Events — gigs, promos & content partnerships.
+          </p>
 
-        <textarea
-          placeholder="Tell us about your content, platforms & audience"
-          rows="4"
-          value={data.message}
-          onChange={(e) => setData({ ...data, message: e.target.value })}
-          required
-        />
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-        <button type="submit">Collaborate With Us</button>
-      </form>
-    </div>
-    
-    <Prefooter />
-    <Footer />
+          {/* Phone */}
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Mobile Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+
+          {/* Message */}
+          <textarea
+            name="data"
+            placeholder="Tell us about your content, platforms & audience"
+            rows="4"
+            value={formData.data}
+            onChange={handleChange}
+            required
+          />
+
+          {/* Button */}
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Collaborate With Us"}
+          </button>
+
+        </form>
+
+      </div>
+
+      <Prefooter />
+      <Footer />
     </>
-
   );
 };
 

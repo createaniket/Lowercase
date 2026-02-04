@@ -28,6 +28,7 @@ import UGR from "./components/forms/UGR";
 import Advertise from "./components/forms/Advertise";
 import UGC from "./components/forms/UGC";
 import Faq from "./components/Pages/Faq/FAQ";
+import Careers from "./components/forms/Career";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
 
         <Route path="/ugr" element={<UGR />} />
         <Route path="/ugc" element={<UGC />} />
+
+        <Route path="/careers" element={<Careers />} />
 
 
 

@@ -15,6 +15,7 @@ const Advertise = () => {
     formType: "advertise", // this will go in URL
   });
 
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const [loading, setLoading] = useState(false);
 
   // Handle Input Change
@@ -39,7 +40,7 @@ const Advertise = () => {
       setLoading(true);
 
       const response = await axios.post(
-        `/api/form/${formData.formType}`,
+        `${baseUrl}/api/form/${formData.formType}`,
         {
           name: formData.name,
           email: formData.email,
