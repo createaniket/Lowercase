@@ -27,6 +27,7 @@ import Venues from "./components/forms/Venues";
 import UGR from "./components/forms/UGR";
 import Advertise from "./components/forms/Advertise";
 import UGC from "./components/forms/UGC";
+import Faq from "./components/Pages/Faq/FAQ";
 
 function App() {
   return (
@@ -67,6 +68,9 @@ function App() {
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
+
+        <Route path="/faq" element={<Faq />} />
 
 
         {/* <Route path="/admin" element={<AlbumUpload />} /> */}
