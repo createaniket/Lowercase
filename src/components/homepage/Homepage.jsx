@@ -122,7 +122,7 @@ pauseBetweenAnimations={1}
 />
                */}
 
-                <Typewriter
+                {/* <Typewriter
                   words={["Together."]}
                   loop={50}
                   cursor
@@ -130,7 +130,7 @@ pauseBetweenAnimations={1}
                   typeSpeed={80}
                   deleteSpeed={5000}
                   delaySpeed={900000}
-                />
+                /> */}
               </p>
             )}
 

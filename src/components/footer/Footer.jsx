@@ -29,9 +29,9 @@ const Footer = () => {
                 <Link to="/about">Home</Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link to="/about">About</Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link to="/events">Events</Link>
@@ -45,21 +45,21 @@ const Footer = () => {
                 <Link to="/artist">Artist</Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link to="/collab">Brands</Link>
-              </li>
+              </li> */}
 
             </ul>
           </div>
 
           <div className="footer-box4">
             <ul>
-              <li>
-                <Link to="/contact">Contact Us</Link>
-              </li>
-              <li>
+
+            <li>
                 <Link to="/faq">FAQ's</Link>
               </li>
+        
+           
               <li>
                 <Link to="/group-bookings">Group Bookings</Link>
               </li>
@@ -71,8 +71,11 @@ const Footer = () => {
               </li>{" "}
 
               <li>
-                <Link to="/ugc">UGC</Link>
+                <Link to="/contact">Contact Us</Link>
               </li>
+
+
+    
             </ul>
           </div>
 
@@ -82,17 +85,25 @@ const Footer = () => {
                 <Link to="/venues">Venues</Link>
               </li>
               <li>
+                <Link to="/">University Partners</Link>
+              </li>{" "}
+
+              <li>
+                <Link to="/">Advertise with us</Link>
+              </li>
+
+                   <li>
+                <Link to="/ugc">UGC</Link>
+              </li> 
+
+              {/* <li>
                 <Link to="/">Our Network</Link>
               </li>
               <li>
                 <Link to="/ugr">UGR</Link>
               </li>
-              <li>
-                <Link to="/">University Partners</Link>
-              </li>{" "}
-              <li>
-                <Link to="/">Advertise with us</Link>
-              </li>
+          */}
+          
               <li>
                 <Link to="/careers">Careers</Link>
               </li>
@@ -126,7 +137,7 @@ const Footer = () => {
                   </a>
                 </li>
 
-                <li>
+                {/* <li>
                   <a
                     href="https://wa.me/447568564663"
                     target="_blank"
@@ -135,7 +146,7 @@ const Footer = () => {
                     {" "}
                     Whatsapp{" "}
                   </a>
-                </li>
+                </li> */}
 
                 <li>
                   <a
