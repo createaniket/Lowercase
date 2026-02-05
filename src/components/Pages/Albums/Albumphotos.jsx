@@ -3,9 +3,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import "./Albumphotos.css";
+
 import Navbartoplogo from "../../navbar/Navbartoplogo";
 import Prefooter from "../../footer/Prefooter";
 import Footer from "../../footer/Footer";
+
+// ICONS
+import { IoHeart } from "react-icons/io5";
+import { CiHeart } from "react-icons/ci";
+import { FaShare } from "react-icons/fa";
 
 const Albumphotos = () => {
   const { id } = useParams();
@@ -20,6 +26,7 @@ const Albumphotos = () => {
   const FetchAlbumById = async () => {
     try {
       const res = await axios.get(`${BaseUrl}/api/album/get/${id}`);
+
       setAlbumTitle(res.data?.data?.club);
       setAlbumPhotos(res.data?.data?.photos || []);
     } catch (err) {
@@ -29,109 +36,42 @@ const Albumphotos = () => {
 
   useEffect(() => {
     FetchAlbumById();
-
     // eslint-disable-next-line
   }, [id]);
 
   // ================= COPY LINK =================
-//   const HandleCopyLink = (photoUrl) => {
-//     navigator.clipboard.writeText(photoUrl);
-//     alert("Link copied!");
-//   };
-
-
-const HandleCopyLink = (photoUrl) => {
+  const HandleCopyLink = (photoUrl) => {
     navigator.clipboard
       .writeText(photoUrl)
       .then(() => {
-        console.log("Photo URL copied to clipboard: ", photoUrl);
-        alert("Link copied to clipboard!");
-        // setShareUrl(photoUrl); // Set the URL for sharing
-        // handleOpen(); // Open Modal
+        alert("Link copied!");
       })
-      .catch((error) => {
-        console.error("Failed to copy link: ", error);
+      .catch(() => {
+        alert("Copy failed!");
       });
   };
+
   // ================= DOWNLOAD =================
-//   const handleDownload = (url, name, photoId) => {
-//     const a = document.createElement("a");
-//     a.href = url;
-//     a.download = name || "photo.png";
-//     document.body.appendChild(a);
-//     a.click();
-//     document.body.removeChild(a);
-
-//     IncreaseDownload(photoId);
-//   };
-
-
-
-// const handleDownload = async (url, name, photoId) => {
-//     try {
-
-//         console.log("Initiating download for URL:", url);
-
-//       const response = await fetch(url);
-
-//       console.log("Fetch response:", response);
-  
-//       const blob = await response.blob();
-  
-//       const blobUrl = window.URL.createObjectURL(blob);
-  
-//       const a = document.createElement("a");
-//       a.href = blobUrl;
-//       a.download = name || "photo.png";
-  
-//       document.body.appendChild(a);
-//       a.click();
-  
-//       document.body.removeChild(a);
-  
-//       window.URL.revokeObjectURL(blobUrl);
-  
-//       // Increase count after success
-//       IncreaseDownload(photoId);
-  
-//     } catch (err) {
-//       console.error("Download failed:", err);
-//       alert("Download failed!");
-//     }
-//   };
-
-
-
-
-
-  // OPEN IMAGE IN NEW TAB
-const handleDownload = (url, name, photoId) => {
+  const handleDownload = (url, name, photoId) => {
     try {
       const a = document.createElement("a");
+
       a.href = url;
       a.download = name || "photo.jpg";
       a.target = "_blank";
-  
+
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-  
+
       IncreaseDownload(photoId);
-  
     } catch (err) {
-      console.error(err);
+      console.log(err);
       alert("Download failed!");
     }
   };
 
-
-
-
-  
-  
-  
-
-  // ================= LIKE =================
+  // ================= LIKE TOGGLE =================
   const toggleLove = (index, photoId) => {
     IncreaseLike(photoId);
 
@@ -143,15 +83,23 @@ const handleDownload = (url, name, photoId) => {
 
   // ================= API CALLS =================
   const IncreaseLike = async (photoId) => {
-    await axios.patch(
-      `${BaseUrl}/api/album/albums/${id}/photos/${photoId}/increase-likes`
-    );
+    try {
+      await axios.patch(
+        `${BaseUrl}/api/album/albums/${id}/photos/${photoId}/increase-likes`
+      );
+    } catch (err) {
+      console.log("Like error:", err);
+    }
   };
 
   const IncreaseDownload = async (photoId) => {
-    await axios.patch(
-      `${BaseUrl}/api/album/albums/${id}/photos/${photoId}/increase-downloads`
-    );
+    try {
+      await axios.patch(
+        `${BaseUrl}/api/album/albums/${id}/photos/${photoId}/increase-downloads`
+      );
+    } catch (err) {
+      console.log("Download error:", err);
+    }
   };
 
   // ================= UI =================
@@ -160,7 +108,6 @@ const handleDownload = (url, name, photoId) => {
       <Navbartoplogo />
 
       <div className="albumphotosnew_dev">
-
         {/* Album Title */}
         <h2 className="albumphotos-title">{albumTitle}</h2>
 
@@ -170,30 +117,48 @@ const handleDownload = (url, name, photoId) => {
           ) : (
             albumPhotos.map((photo, index) => (
               <div className="albumphotos-card" key={photo._id}>
-                {/* Image */}
+                {/* IMAGE */}
                 <img src={photo.url} alt="album" />
 
-                {/* Overlay */}
+                {/* OVERLAY */}
                 <div className="albumphotos-overlay">
-                  <h4>{photo.title || "Photo"}</h4>
+                  {/* <h4>{photo.title || "Photo"}</h4> */}
                   <p>{photo.createdAt?.slice(0, 10)}</p>
 
                   <div className="albumphotos-icons">
-                    {/* Like */}
-                    <span
-                      onClick={() => toggleLove(index, photo._id)}
-                      style={{
-                        color: lovedPhotos[index] ? "red" : "white",
-                      }}
-                    >
-                      ❤️
-                    </span>
+                    {/* LIKE SYSTEM */}
+                    <div className="albumphotos-like-box">
+                      {lovedPhotos[index] ? (
+                        <>
+                          <IoHeart
+                            className="albumphotos-like-icon-active"
+                            onClick={() => toggleLove(index, photo._id)}
+                          />
 
-                    {/* Share */}
-                    <span onClick={() => HandleCopyLink(photo.url)}>🔗</span>
+                          <p className="albumphotos-like-text">Dislike</p>
+                        </>
+                      ) : (
+                        <>
+                          <CiHeart
+                            className="albumphotos-like-icon"
+                            onClick={() => toggleLove(index, photo._id)}
+                          />
 
-                    {/* Download */}
+                          <p className="albumphotos-like-text">{photo.likes}</p>
+                        </>
+                      )}
+                    </div>
+
+                    {/* SHARE */}
+
+                    <FaShare
+                      className="albumphotos-action-icon"
+                      onClick={() => HandleCopyLink(photo.url)}
+                    />
+
+                    {/* DOWNLOAD */}
                     <span
+                      className="albumphotos-action-icon"
                       onClick={() =>
                         handleDownload(photo.url, photo.title, photo._id)
                       }
@@ -207,6 +172,7 @@ const handleDownload = (url, name, photoId) => {
           )}
         </div>
       </div>
+
       <Prefooter />
       <Footer />
     </div>

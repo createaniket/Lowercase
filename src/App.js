@@ -1,4 +1,3 @@
-
 import About from "./components/about/About";
 import Artist from "./components/artist/Artist";
 import Collaborations from "./components/collaborations/Collaborations";
@@ -52,8 +51,6 @@ function App() {
 
         <Route path="/careers" element={<Careers />} />
 
-
-
         <Route path="/advertise" element={<Advertise />} />
 
         <Route path="/about" element={<About />} />
@@ -71,22 +68,17 @@ function App() {
         <Route path="/albums" element={<Albumshow />} />
         <Route path="/photobyalbum/:id" element={<Albumphotos />} />
 
-
-
-{/* HIDING BELOW ROUTE FOR A WHILE */}
+        {/* HIDING BELOW ROUTE FOR A WHILE */}
         {/* <Route path="/photobyalbum/:id" element={<Photobyalbum />} /> */}
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
 
-
         <Route path="/support" element={<Faq />} />
-
 
         <Route path="/new-artist-demo/:id" element={<ArtistPage />} />
 
-        <Route path="/all-albums"element={<Albumnew />} />
-
+        <Route path="/all-albums" element={<Albumnew />} />
 
         {/* <Route path="/admin" element={<AlbumUpload />} /> */}
 
@@ -94,11 +86,8 @@ function App() {
           path="/admin"
           element={
             <ProtectedRoute>
-
               <AdminLayout />
             </ProtectedRoute>
-           
-          
           }
         >
           <Route index element={<Abumlist />} />

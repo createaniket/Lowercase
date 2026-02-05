@@ -119,3 +119,38 @@
     transform: scale(1.2);
   }
   
+
+
+  /* ===== LIKE SYSTEM FIX ===== */
+
+.albumphotos-like-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.albumphotos-like-text {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* EMPTY HEART */
+.albumphotos-like-icon {
+  font-size: 24px !important;
+  color: white !important;
+  transition: 0.3s ease;
+}
+
+/* FILLED HEART (ACTIVE) */
+.albumphotos-like-icon-active {
+  font-size: 24px !important;
+  color: red !important;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.albumphotos-like-icon:hover,
+.albumphotos-like-icon-active:hover {
+  transform: scale(1.2);
+}
