@@ -20,7 +20,7 @@ const Albumshow = () => {
         const response = await axios.get(`${baseUrl}/api/album/getall`);
 
         const albumData = response.data.data || [];
-        // console.log("API albumData:", albumData);
+        console.log("API albumData:", albumData);
         setData(albumData);
         setLoading(false);
       } catch (error) {

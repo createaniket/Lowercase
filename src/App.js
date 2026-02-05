@@ -12,7 +12,7 @@ import AlbumUpload from "./components/admin/Album/Albumupload";
 import AdminLayout from "./components/admin/Adminlayout";
 import Abumlist from "./components/admin/Album/Abumlist";
 import Albumshow from "./components/Pages/Albums/Albumshow";
-import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
+// import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
 import Artistdetail from "./components/artist/Artistdetail";
 import NewArtist from "./components/NewArtist/NewArtist";
 import Login from "./components/admin/Album/Login";
@@ -30,6 +30,8 @@ import UGC from "./components/forms/UGC";
 import Faq from "./components/Pages/Faq/FAQ";
 import Careers from "./components/forms/Career";
 import ArtistPage from "./components/Pages/Artists/ArtistPage";
+import Albumnew from "./components/Pages/Albums/Albumnew";
+import Albumphotos from "./components/Pages/Albums/Albumphotos";
 
 function App() {
   return (
@@ -67,8 +69,12 @@ function App() {
         <Route path="/tkt" element={<FatsomaWidget />} />
 
         <Route path="/albums" element={<Albumshow />} />
+        <Route path="/photobyalbum/:id" element={<Albumphotos />} />
 
-        <Route path="/photobyalbum/:id" element={<Photobyalbum />} />
+
+
+{/* HIDING BELOW ROUTE FOR A WHILE */}
+        {/* <Route path="/photobyalbum/:id" element={<Photobyalbum />} /> */}
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
@@ -78,6 +84,8 @@ function App() {
 
 
         <Route path="/new-artist-demo/:id" element={<ArtistPage />} />
+
+        <Route path="/all-albums"element={<Albumnew />} />
 
 
         {/* <Route path="/admin" element={<AlbumUpload />} /> */}

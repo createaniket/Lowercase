@@ -1,0 +1,111 @@
+/* Container */
+.albumphotos-container {
+    column-count: 4;
+    column-gap: 15px;
+    padding: 20px;
+  }
+
+
+  .albumphotosnew_dev{
+
+    margin-top: 100px;
+
+
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .albumphotos-container {
+      column-count: 3;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .albumphotos-container {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .albumphotos-container {
+      column-count: 1;
+    }
+  }
+  
+  /* Card */
+  .albumphotos-card {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    break-inside: avoid;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  /* Image */
+  .albumphotos-card img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+  }
+  
+  /* Zoom */
+  .albumphotos-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Overlay */
+  .albumphotos-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      transparent
+    );
+  
+    color: #fff;
+    padding: 15px;
+  
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  
+  /* Show overlay */
+  .albumphotos-card:hover .albumphotos-overlay {
+    opacity: 1;
+  }
+  
+  /* Text */
+  .albumphotos-overlay h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .albumphotos-overlay p {
+    margin: 3px 0 8px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  /* Icons */
+  .albumphotos-icons {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+  }
+  
+  .albumphotos-icons span {
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .albumphotos-icons span:hover {
+    transform: scale(1.2);
+  }
+  
