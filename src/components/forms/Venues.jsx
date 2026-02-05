@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./Venues.css";
 import axios from "axios";
 
-import Navbar from "../navbar/Navbar";
+
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const Venues = () => {
 
@@ -75,7 +76,7 @@ const Venues = () => {
 
   return (
     <>
-      <Navbar />
+<Navbartoplogo />
 
       <div className="venuesWrapper">
 

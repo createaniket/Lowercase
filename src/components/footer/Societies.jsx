@@ -3,7 +3,8 @@ import "./Societies.css";
 import axios from "axios";
 import Prefooter from "./Prefooter";
 import Footer from "./Footer";
-import Navbar from "../navbar/Navbar";
+
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const Societies = () => {
   const [data, setData] = useState({
@@ -34,7 +35,7 @@ const Societies = () => {
   return (
 
     <>
-    <Navbar />
+<Navbartoplogo />
 
 
     <div className="societiesWrapper">

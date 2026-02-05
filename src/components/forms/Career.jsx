@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
-import Navbar from "../navbar/Navbar";
+
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
-
+import Navbartoplogo from "../navbar/Navbartoplogo";
 const Careers = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -60,7 +60,6 @@ const Careers = () => {
         data: "",
         formType: "careers",
       });
-
     } catch (error) {
       console.error("Error:", error);
 
@@ -71,71 +70,61 @@ const Careers = () => {
   };
 
   return (
-
-
     <>
+      <Navbartoplogo />
 
-    <Navbar />
-    
-    <div className="bwformpage">
+      <div className="bwformpage">
+        <form className="bwForm" onSubmit={submit}>
+          <h2>Careers</h2>
 
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
+          {/* Phone */}
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Mobile Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
 
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-    <form className="bwForm" onSubmit={submit}>
-      <h2>Careers</h2>
+          {/* Message */}
+          <textarea
+            name="data"
+            placeholder="Why should we hire you?"
+            value={formData.data}
+            onChange={handleChange}
+          />
 
-      {/* Name */}
-      <input
-        type="text"
-        name="name"
-        placeholder="Full Name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-      />
+          {/* Button */}
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Apply"}
+          </button>
+        </form>
+      </div>
 
-      {/* Phone */}
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Mobile Number"
-        value={formData.phone}
-        onChange={handleChange}
-        required
-      />
-
-      {/* Email */}
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
-
-      {/* Message */}
-      <textarea
-        name="data"
-        placeholder="Why should we hire you?"
-        value={formData.data}
-        onChange={handleChange}
-      />
-
-      {/* Button */}
-      <button type="submit" disabled={loading}>
-        {loading ? "Sending..." : "Apply"}
-      </button>
-    </form>
-
-    </div>
-
-    <Prefooter />
-    <Footer />
-
+      <Prefooter />
+      <Footer />
     </>
-
   );
 };
 

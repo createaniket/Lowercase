@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Birthdays.css";
 import axios from "axios";
-import Navbar from "../navbar/Navbar";
+
 import Prefooter from "./Prefooter";
 import Footer from "./Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const Birthdays = () => {
   const [data, setData] = useState({
@@ -33,7 +34,9 @@ const Birthdays = () => {
 
   return (
     <>
-    <Navbar />
+
+
+    <Navbartoplogo />
 
     <div className="birthdayWrapper">
       <form className="bwForm" onSubmit={submit}>

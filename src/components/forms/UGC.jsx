@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./UGC.css";
 import axios from "axios";
 
-import Navbar from "../navbar/Navbar";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const UGC = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -63,7 +62,6 @@ const UGC = () => {
         data: "",
         formType: "ugc-influencer",
       });
-
     } catch (error) {
       console.error("Error:", error);
 
@@ -75,16 +73,15 @@ const UGC = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbartoplogo />
 
       <div className="ugcWrapper">
-
         <form className="bwForm" onSubmit={submit}>
-
           <h2>Creators & Influencers</h2>
 
           <p className="subtitle">
-            Collaborate with Lowercase Events — gigs, promos & content partnerships.
+            Collaborate with Lowercase Events — gigs, promos & content
+            partnerships.
           </p>
 
           {/* Name */}
@@ -131,9 +128,7 @@ const UGC = () => {
           <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Collaborate With Us"}
           </button>
-
         </form>
-
       </div>
 
       <Prefooter />

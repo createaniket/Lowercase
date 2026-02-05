@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+
 import LowercaseeventsLogo from "../assests/LowercaseLogoRect.png";
 import './Navbartoplogo.css'
 
 const Navbartoplogo = () => {
   return (
+
+    <>
+    
     <div className="navbar_with_top_logo">
       <div className="navbar-logo">
         <Link to="/">
@@ -28,6 +31,9 @@ const Navbartoplogo = () => {
         </Link>
       </div>
     </div>
+
+    <div className="navbar-spacer"></div>
+    </>
   );
 };
 

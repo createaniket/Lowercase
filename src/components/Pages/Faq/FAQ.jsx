@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Faq.css";
-import Navbar from "../../navbar/Navbar";
+
 import Prefooter from "../../footer/Prefooter";
 import Footer from "../../footer/Footer";
 
 import faqData from "./faqdata";
+import Navbartoplogo from "../../navbar/Navbartoplogo";
 
 const Faq = () => {
   const [activeTab, setActiveTab] = useState("📞 Contact & Support");
@@ -24,7 +25,7 @@ const Faq = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbartoplogo />
 
       <div className="faq-container">
         {/* Tabs */}

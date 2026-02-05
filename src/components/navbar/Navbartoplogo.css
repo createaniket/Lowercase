@@ -49,3 +49,8 @@
 .navbar-items:hover {
     color: #ffcc00; /* Optional hover effect */
 }
+
+
+.navbar-spacer{
+    height: 50px; /* Adjust this value to match the height of your navbar */
+}

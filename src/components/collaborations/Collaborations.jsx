@@ -10,13 +10,14 @@ import newyork from "../assests/new_york.jpg";
 import italy from "../assests/italy.jpeg";
 import vegas from "../assests/vegas.jpg";
 import chicago from "../assests/chicago.jpg";
-import Navbar from "../navbar/Navbar";
+
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const Collaborations = () => {
   return (
     <div>
-      <Navbar />
+<Navbartoplogo />
       <div className="collab_container">
         <div className="collab_banner">
           <video src={video2} loop autoPlay muted></video>

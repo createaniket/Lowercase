@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
-import Navbar from "../navbar/Navbar";
+
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const GroupBookings = () => {
   const [formData, setFormData] = useState({
@@ -72,7 +73,7 @@ const GroupBookings = () => {
 
   return (
     <>
-      <Navbar />
+<Navbartoplogo />
 
       <div className="groupbookings_page">
         <form className="bwForm" onSubmit={submit}>

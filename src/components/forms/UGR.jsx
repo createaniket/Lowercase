@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./UGR.css";
 import axios from "axios";
 
-import Navbar from "../navbar/Navbar";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const UGR = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -63,7 +62,6 @@ const UGR = () => {
         data: "",
         formType: "university-partner",
       });
-
     } catch (error) {
       console.error("Error:", error);
 
@@ -75,12 +73,10 @@ const UGR = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbartoplogo />
 
       <div className="ugrWrapper">
-
         <form className="bwForm" onSubmit={submit}>
-
           <h2>University Partnerships</h2>
 
           <p className="subtitle">
@@ -132,9 +128,7 @@ const UGR = () => {
           <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Partner With Us"}
           </button>
-
         </form>
-
       </div>
 
       <Prefooter />

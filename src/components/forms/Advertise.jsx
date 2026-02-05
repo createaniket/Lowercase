@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
 
-import Navbar from "../navbar/Navbar";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const Advertise = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +61,6 @@ const Advertise = () => {
         data: "",
         formType: "advertise",
       });
-
     } catch (error) {
       console.error("Error:", error);
 
@@ -73,63 +72,58 @@ const Advertise = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbartoplogo />
 
       <div className="bwformpage">
+        <form className="bwForm" onSubmit={submit}>
+          <h2>Advertise With Us</h2>
 
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
+          {/* Phone */}
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Mobile Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
 
-      <form className="bwForm" onSubmit={submit}>
-        <h2>Advertise With Us</h2>
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-        {/* Name */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+          {/* Message */}
+          <textarea
+            name="data"
+            placeholder="Brand / Campaign Details"
+            value={formData.data}
+            onChange={handleChange}
+          />
 
-        {/* Phone */}
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Mobile Number"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
-
-        {/* Email */}
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
-        {/* Message */}
-        <textarea
-          name="data"
-          placeholder="Brand / Campaign Details"
-          value={formData.data}
-          onChange={handleChange}
-        />
-
-        {/* Button */}
-        <button type="submit" disabled={loading}>
-          {loading ? "Sending..." : "Submit"}
-        </button>
-      </form>
-
+          {/* Button */}
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Submit"}
+          </button>
+        </form>
       </div>
       <Prefooter />
       <Footer />
-
     </>
   );
 };

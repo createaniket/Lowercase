@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./ContactUs.css";
 import axios from "axios";
 
-import Navbar from "../navbar/Navbar";
+
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -73,7 +74,8 @@ const ContactUs = () => {
 
   return (
     <>
-      <Navbar />
+
+<Navbartoplogo />
 
       <div className="contactUsPage">
         <form className="bwForm" onSubmit={submit}>

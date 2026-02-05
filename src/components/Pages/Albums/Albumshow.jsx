@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Curvedcard from "../../Cards/Curvedcard";
-import Navbar from "../../navbar/Navbar";
+
 import "./Albumshow.css";
 import Footer from "../../footer/Footer";
+import Navbartoplogo from "../../navbar/Navbartoplogo";
 
 const Albumshow = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-
-
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
   console.log("Base URL:", baseUrl);
@@ -20,12 +18,11 @@ const Albumshow = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${baseUrl}/api/album/getall`);
-       
+
         const albumData = response.data.data || [];
         // console.log("API albumData:", albumData);
-        setData(albumData); 
+        setData(albumData);
         setLoading(false);
-        
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -33,8 +30,6 @@ const Albumshow = () => {
     };
 
     fetchData();
-
-
   }, [baseUrl]);
 
   const groupAlbumsByYear = (albums) => {
@@ -61,10 +56,10 @@ const Albumshow = () => {
   return (
     <div>
       <div className="albumshow_navbr">
-        <Navbar />
+        <Navbartoplogo />
       </div>
       <div className="belownavbar">
-      <video
+        <video
           className="background-video"
           src={
             "https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4"
@@ -76,11 +71,10 @@ const Albumshow = () => {
       </div>
 
       <div className="allbimshow_section">
-      
         {sortedYears.map((year) => (
           <div key={year} className="year-section">
             <h2 className="albumshow_year_text">{year}</h2>
-            <Curvedcard albums={groupedData[year]}   />
+            <Curvedcard albums={groupedData[year]} />
           </div>
         ))}
       </div>

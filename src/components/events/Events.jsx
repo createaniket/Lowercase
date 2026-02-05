@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from "react";
 import "./Events.css";
 
 import Footer from "../footer/Footer";
-import Navbar from "../navbar/Navbar";
+
 import Prefooter from "../footer/Prefooter";
+import Navbartoplogo from "../navbar/Navbartoplogo";
 
 const Events = () => {
   const widgetContainerRef = useRef(null);
@@ -32,7 +33,7 @@ const Events = () => {
   return (
     <div>
       <div className="event-container">
-        <Navbar />
+        <Navbartoplogo />
 
         <div className="event-heading">EVENTS</div>
         <div className="belownavbar">
