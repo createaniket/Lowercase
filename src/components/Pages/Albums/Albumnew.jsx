@@ -45,9 +45,7 @@ const Albumnew = () => {
   const filteredAlbums = albums.filter((album) => {
     const search = searchTerm.toLowerCase();
 
-    const titleMatch = album.title
-      ?.toLowerCase()
-      .includes(search);
+    const titleMatch = album.title?.toLowerCase().includes(search);
 
     const tagMatch = album.tags?.some((tag) =>
       tag.toLowerCase().includes(search)
@@ -60,26 +58,19 @@ const Albumnew = () => {
     <>
       <Navbartoplogo />
 
-
       <div className="new_albums_head_plus_serch_box_cont">
+        <p className="albumphotopage_heading">DOWNLOAD YOUR PHOTOS</p>
 
-
-
-      <p className="albumphotopage_heading">
-        DOWNLOAD YOUR PHOTOS
-      </p>
-
-      {/* Search Box */}
-      <div className="album_search_wrapper">
-        <input
-          type="text"
-          placeholder="Search by album name or tags..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="album_search_input"
-        />
-      </div>
-
+        {/* Search Box */}
+        <div className="album_search_wrapper">
+          <input
+            type="text"
+            placeholder="Search by album name or tags..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="album_search_input"
+          />
+        </div>
       </div>
 
       {/* Albums Grid */}
@@ -99,17 +90,11 @@ const Albumnew = () => {
 
               {/* Overlay */}
               <div className="beAlbumnew_overlay">
-                <h3 className="beAlbumnew_title">
-                  {album.title}
-                </h3>
+                <h3 className="beAlbumnew_title">{album.title}</h3>
 
-                <p className="beAlbumnew_date">
-                  {formatDate(album.date)}
-                </p>
+                <p className="beAlbumnew_date">{formatDate(album.date)}</p>
 
-                <p className="beAlbumnew_venue">
-                  {album.venue}
-                </p>
+                <p className="beAlbumnew_venue">{album.venue}</p>
 
                 <div className="beAlbumnew_tags">
                   {album.tags?.map((tag, index) => (
@@ -120,9 +105,7 @@ const Albumnew = () => {
             </div>
           ))
         ) : (
-          <p className="no_album_found">
-            No albums found 😕
-          </p>
+          <p className="no_album_found">No albums found 😕</p>
         )}
       </div>
 
