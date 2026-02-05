@@ -26,7 +26,7 @@ const Navbartoplogo = () => {
         <Link to="/photos" className="navbar-items">
           PHOTOS 
         </Link>
-        <Link to="/artist" className="navbar-items">
+        <Link to="/artists" className="navbar-items">
           ARTISTS
         </Link>
       </div>

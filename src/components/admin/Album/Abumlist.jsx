@@ -129,7 +129,7 @@ const Abumlist = () => {
 
   return (
     <div>
-      <Curvedcard Albums={data} refetch={fetchData} />
+      <Curvedcard albums={data} refetch={fetchData} />
     </div>
   );
 };

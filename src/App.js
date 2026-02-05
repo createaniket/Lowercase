@@ -1,5 +1,5 @@
 import About from "./components/about/About";
-import Artist from "./components/artist/Artist";
+// import Artist from "./components/artist/Artist";
 import Collaborations from "./components/collaborations/Collaborations";
 import Homepage from "./components/homepage/Homepage";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
@@ -12,8 +12,8 @@ import AdminLayout from "./components/admin/Adminlayout";
 import Abumlist from "./components/admin/Album/Abumlist";
 import Albumshow from "./components/Pages/Albums/Albumshow";
 // import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
-import Artistdetail from "./components/artist/Artistdetail";
-import NewArtist from "./components/NewArtist/NewArtist";
+// import Artistdetail from "./components/artist/Artistdetail";
+// import NewArtist from "./components/NewArtist/NewArtist";
 import Login from "./components/admin/Album/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PrivacyPolicy from "./components/Pages/Privacypolicies/PrivacyPolicy";
@@ -31,6 +31,7 @@ import Careers from "./components/forms/Career";
 import ArtistPage from "./components/Pages/Artists/ArtistPage";
 import Albumnew from "./components/Pages/Albums/Albumnew";
 import Albumphotos from "./components/Pages/Albums/Albumphotos";
+import AllArtists from "./components/Pages/Artists/AllArtists";
 
 function App() {
   return (
@@ -54,10 +55,14 @@ function App() {
         <Route path="/advertise" element={<Advertise />} />
 
         <Route path="/about" element={<About />} />
-        <Route path="/artist" element={<Artist />} />
-        <Route path="/newartist" element={<NewArtist />} />
+        {/* <Route path="/artist" element={<Artist />} /> */}
+      
+
+        {/* <Route path="/newartist" element={<NewArtist />} /> */}
+        <Route path="/artists" element={<AllArtists />} />
+
         {/* <Route path="/artist/details" element={<Artistdetail />} /> */}
-        <Route path="/artist/:id" element={<Artistdetail />} />
+        <Route path="/artist/:id" element={<ArtistPage />} />
 
         <Route path="/collab" element={<Collaborations />} />
         <Route path="/photos" element={<Photos />} />

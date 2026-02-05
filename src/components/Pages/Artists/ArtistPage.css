@@ -1,182 +1,254 @@
 /* Main Page */
 .artist-page {
-    background: #0f0f0f;
-    color: white;
-    min-height: 100vh;
-    padding: 30px 50px;
-    font-family: Arial, sans-serif;
+  color: white;
+  min-height: 100vh;
+  padding: 40px 60px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-top: 100px;
+  background: #000;
+}
+
+
+/* ================= HEADER ================= */
+
+.artist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #222;
+  margin-bottom: 30px;
+}
+
+.artist-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+
+/* Buttons */
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  border: none;
+  padding: 10px 26px;
+  border-radius: 25px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+}
+
+.follow-btn {
+  background: #111;
+  border: 1px solid #333;
+  padding: 9px 22px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.more-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+/* ================= LAYOUT ================= */
+
+.artist-content {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.left-section {
+  width: 100%;
+}
+
+
+/* ================= GALLERY ================= */
+
+.left-section h3 {
+  margin: 25px 0 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.main-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.side-images {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.side-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+
+/* ================= BIO ================= */
+
+.bio {
+  color: #ddd;
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+
+/* ================= RIGHT SECTION ================= */
+
+.right-section {
+  background: #0e0e0e;
+  padding: 25px;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.right-section h3 {
+  margin-bottom: 15px;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* ================= SOCIAL LINKS ================= */
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.social-links li {
+  margin-bottom: 12px;
+}
+
+.social-links a {
+  color: #1db954;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #1ed760;
+  text-decoration: underline;
+}
+
+
+/* ================= PLAYLIST ================= */
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.playlist-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #181818;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.playlist-item:hover {
+  background: #252525;
+  transform: translateY(-2px);
+}
+
+.playlist-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.playlist-item h4 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.playlist-item p {
+  font-size: 12px;
+  margin: 0;
+  color: #aaa;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+  .artist-page {
+    padding: 30px 25px;
   }
-  
-  
-  /* Header */
-  .artist-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+
   .artist-header h1 {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 36px;
   }
-  
-  .header-actions {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .play-btn {
-    background: #1db954;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 20px;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .follow-btn {
-    background: transparent;
-    border: 1px solid #aaa;
-    padding: 8px 20px;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .more-btn {
-    background: transparent;
-    color: white;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  
-  /* Navigation */
-  .artist-nav {
-    display: flex;
-    gap: 30px;
-    margin: 25px 0;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-  }
-  
-  .artist-nav span {
-    color: #aaa;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .artist-nav .active {
-    color: white;
-    border-bottom: 2px solid #1db954;
-    padding-bottom: 5px;
-  }
-  
-  
-  /* Content Layout */
+
   .artist-content {
-    display: grid;
-    grid-template-columns: 3fr 1.2fr;
-    gap: 40px;
+    grid-template-columns: 1fr;
   }
-  
-  
-  /* Left Section */
-  .left-section h3 {
-    margin-bottom: 15px;
-    margin-top: 25px;
-  }
-  
+
   .gallery {
-    display: flex;
-    gap: 15px;
+    grid-template-columns: 1fr;
   }
-  
-  .main-img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 6px;
-  }
-  
+
   .side-images {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
-  
+
   .side-images img {
-    width: 160px;
     height: 160px;
-    object-fit: cover;
-    border-radius: 6px;
   }
-  
-  .bio {
-    color: #ccc;
-    line-height: 1.6;
-    max-width: 650px;
+
+  .main-img {
+    height: 300px;
   }
-  
-  
-  /* Right Section */
-  .right-section h3 {
-    margin-bottom: 15px;
-    margin-top: 25px;
+
+  .right-section {
+    margin-top: 20px;
   }
-  
-  .social-links {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px;
-  }
-  
-  .social-links li {
-    margin-bottom: 10px;
-    color: #1db954;
-    cursor: pointer;
-  }
-  
-  
-  /* Playlists */
-  .playlist {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .playlist-item {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    background: #181818;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .playlist-item:hover {
-    background: #252525;
-  }
-  
-  .playlist-item img {
-    width: 55px;
-    height: 55px;
-    border-radius: 4px;
-    object-fit: cover;
-  }
-  
-  .playlist-item h4 {
-    font-size: 14px;
-    margin: 0;
-  }
-  
-  .playlist-item p {
-    font-size: 12px;
-    margin: 0;
-    color: #aaa;
-  }
-  
+}
