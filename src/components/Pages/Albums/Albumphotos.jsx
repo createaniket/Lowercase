@@ -105,38 +105,16 @@ const HandleCopyLink = (photoUrl) => {
 
 
   // OPEN IMAGE IN NEW TAB
-// const handleDownload = (url, name, photoId) => {
-//     try {
-//       const a = document.createElement("a");
-//       a.href = url;
-//       a.download = name || "photo.jpg";
-//       a.target = "_blank";
-  
-//       document.body.appendChild(a);
-//       a.click();
-//       document.body.removeChild(a);
-  
-//       IncreaseDownload(photoId);
-  
-//     } catch (err) {
-//       console.error(err);
-//       alert("Download failed!");
-//     }
-//   };
-
-
-
 const handleDownload = (url, name, photoId) => {
     try {
-      const link = document.createElement("a");
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = name || "photo.jpg";
+      a.target = "_blank";
   
-      link.href = url + "?response-content-disposition=attachment";
-  
-      link.download = name || "photo.jpg";
-  
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
   
       IncreaseDownload(photoId);
   
@@ -145,6 +123,10 @@ const handleDownload = (url, name, photoId) => {
       alert("Download failed!");
     }
   };
+
+
+
+
   
   
   
@@ -178,6 +160,7 @@ const handleDownload = (url, name, photoId) => {
       <Navbartoplogo />
 
       <div className="albumphotosnew_dev">
+
         {/* Album Title */}
         <h2 className="albumphotos-title">{albumTitle}</h2>
 
