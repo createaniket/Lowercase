@@ -3,11 +3,8 @@ import "./HomeGallery.css";
 import { useEffect } from "react";
 import axios from "axios";
 
-
-
 export default function Gallery() {
-
-    const [images, setImages] = useState([]);
+  const [images, setImages] = useState([]);
   const [hovered, setHovered] = useState(null);
 
   const hoveredRow = hovered !== null ? Math.floor(hovered / 5) : null;
@@ -23,32 +20,40 @@ export default function Gallery() {
   }, [hoveredCol]);
 
   // split into rows
-  const rows = [
-    images.slice(0, 5),
-    images.slice(5, 10),
-    images.slice(10, 15),
-  ];
+  const rows = [images.slice(0, 5), images.slice(5, 10), images.slice(10, 15)];
 
   const BaseUrl = process.env.REACT_APP_BASE_URL;
-
-
-  useEffect(() => { 
-                    const FetchAlbumById = async () => {
-                        try {
-                        const response = await axios.get(
-                            `${BaseUrl}/api/album/get/6976425b7af04a2b9f8da4f1`
-                        );
-                        console.log("the response of the albums", response.data.data);
-                        setImages(response.data?.data.photos || []);
-                        } catch (err) {
-                        console.error("Error fetching images:", err);
-                        // setShowSkeleton(false);
-                        }
-                    };
-                
-                    FetchAlbumById();
-                    }, [BaseUrl]);
-
+  useEffect(() => {
+    const FetchAlbumById = async () => {
+      try {
+        const response = await axios.get(
+          `${BaseUrl}/api/album/get/6976425b7af04a2b9f8da4f1`
+        );
+  
+        console.log("the response of the albums", response.data.data);
+  
+        const photos = response.data?.data?.photos || [];
+  
+        // Allowed extensions
+        const validExtensions = [".jpg", ".jpeg", ".png", ".webp"];
+  
+        // Filter only valid images
+        const filteredImages = photos.filter((photo) =>
+          validExtensions.some((ext) =>
+            photo.url?.toLowerCase().endsWith(ext)
+          )
+        );
+  
+        setImages(filteredImages);
+  
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      }
+    };
+  
+    FetchAlbumById();
+  }, [BaseUrl]);
+  
 
   return (
     <div className="galleryWrapper">

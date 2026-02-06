@@ -24,13 +24,11 @@ const Homepage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  const [showtextone, setShowtextone] = useState(false);
+
 
   const [showtexttwo, setShowtexttwo] = useState(false);
 
-  setTimeout(() => {
-    setShowtextone(true);
-  }, 1500);
+
 
   setTimeout(() => {
     setShowtexttwo(true);
@@ -110,29 +108,7 @@ const Homepage = () => {
               />
             </p>
 
-            {showtextone && (
-              <p className="vdohome_contenttwo">
-                {/* <TrueFocus 
-sentence="True Focus"
-manualMode={false}
-blurAmount={5}
-borderColor="#fff700"
-animationDuration={0.5}
-pauseBetweenAnimations={1}
-/>
-               */}
-
-                {/* <Typewriter
-                  words={["Together."]}
-                  loop={50}
-                  cursor
-                  cursorStyle=""
-                  typeSpeed={80}
-                  deleteSpeed={5000}
-                  delaySpeed={900000}
-                /> */}
-              </p>
-            )}
+     
 
             {showtexttwo && (
               <div className="vdoheadhomepage">

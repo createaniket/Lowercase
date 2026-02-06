@@ -51,13 +51,15 @@
 
 .home_artists_section_heading{
 
-    /* color: #fff; */
-    padding: 10px;
-    font-size: 48px;
-    font-weight: 800;
-    background-color: yellow;
-    display: inline;
-    border-radius: 5px;
+  padding: 10px 15px;
+  background-color: yellow;
+  font-size: 38px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  width: fit-content;
 
 }
 
@@ -109,7 +111,9 @@
   font-size: 54px;
   bottom: 20px;
   border-radius: 5px;
-  margin: 20px 00;
+  margin: 20px auto;
+  padding: 00 10px;
+  width: 95vw;
 
 }
 
