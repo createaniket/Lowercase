@@ -71,14 +71,30 @@
 }
 
 .prefooter_form input::placeholder {
-  color: #777;
-  font-weight: 600;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .prefooter_form input:focus {
   outline: none;
   border-color: #fff;
 }
+
+
+/* Default select style */
+.prefooter_city {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Placeholder style */
+.prefooter_city.placeholder {
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+}
+
 
 /* BUTTON */
 .prefooter_form button {

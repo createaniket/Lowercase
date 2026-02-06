@@ -6,6 +6,9 @@ import "./Footer.css";
 import LowercaseEventsLogo from "../assests/LowercaseLogoRect.png";
 import { Link } from "react-router-dom";
 const Footer = () => {
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="footer_main_parent">
       <div className="lisenced">
@@ -188,7 +191,7 @@ const Footer = () => {
 
       <div className="bottom_footer">
         <div className="lisenced-note">
-          <span> ©</span> 2024 LOWERCASE EVENTS. ALL RIGHTS RESERVED. <br /> WEB
+          <span> ©</span> {currentYear} LOWERCASE EVENTS. ALL RIGHTS RESERVED. <br /> WEB
           DEVELOPMENT <a href="/">LOWERCASE AGENCY</a>
         </div>
 

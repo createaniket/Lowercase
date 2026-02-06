@@ -14,8 +14,8 @@ const items = [
   { id: "drake", img: img2, Title: "DRAKE" },
   { id: "kehlani", img: img3, Title: "KEHLANI" },
   { id: "gunna", img: img4, Title: "GUNNA" },
-  { id: "a-boogie", img: img5, Title: "A BOOGIE wit da hoodie" },
-  { id: "don-toliver", img: img6, Title: "Don Toliver" },
+  { id: "a-boogie", img: img5, Title: "A BOOGIE" },
+  { id: "don-toliver", img: img6, Title: "DON TOLIVER" },
 ];
 
 const ArtistsCard = () => {

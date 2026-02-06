@@ -10,7 +10,7 @@ import FatsomaWidget from "./components/LowercaseTicket/Lowercaseticketwidget";
 import AlbumUpload from "./components/admin/Album/Albumupload";
 import AdminLayout from "./components/admin/Adminlayout";
 import Abumlist from "./components/admin/Album/Abumlist";
-import Albumshow from "./components/Pages/Albums/Albumshow";
+// import Albumshow from "./components/Pages/Albums/Albumshow";
 // import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
 // import Artistdetail from "./components/artist/Artistdetail";
 // import NewArtist from "./components/NewArtist/NewArtist";
@@ -70,7 +70,7 @@ function App() {
 
         <Route path="/tkt" element={<FatsomaWidget />} />
 
-        <Route path="/albums" element={<Albumshow />} />
+        {/* <Route path="/albums" element={<Albumshow />} /> */}
         <Route path="/photobyalbum/:id" element={<Albumphotos />} />
 
         {/* HIDING BELOW ROUTE FOR A WHILE */}
@@ -83,7 +83,7 @@ function App() {
 
         <Route path="/new-artist-demo/:id" element={<ArtistPage />} />
 
-        <Route path="/all-albums" element={<Albumnew />} />
+        <Route path="/albums" element={<Albumnew />} />
 
         {/* <Route path="/admin" element={<AlbumUpload />} /> */}
 

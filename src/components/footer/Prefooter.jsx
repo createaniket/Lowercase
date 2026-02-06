@@ -54,7 +54,6 @@ const cities = [
 ];
 
 const Prefooter = () => {
-
   const [formData, setFormData] = useState({
     phone: "",
     city: "",
@@ -98,7 +97,6 @@ const Prefooter = () => {
         phone: "",
         city: "",
       });
-
     } catch (err) {
       console.error(err);
       alert("Something went wrong");
@@ -107,32 +105,41 @@ const Prefooter = () => {
     }
   };
 
+
   return (
     <section className="prefooter">
       <div className="prefooter_main">
-
         {/* LEFT */}
         <div className="prefooter_main_left">
-          <img src={FatosmaImg} alt="Partner 1" />
+          <a
+            href="https://www.fatsoma.com/discover"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={FatosmaImg} alt="Partner 1" />
+          </a>
+
+          <a
+            href="https://www.yourfreshersguide.com"
+            target="_blank"
+            rel="noreferrer"
+          >
           <img src={Taski} alt="Partner 2" />
+          </a>
         </div>
 
         {/* RIGHT */}
         <div className="prefooter_main_right">
-
-          <h2 className="prefooter_heading">
-            Join the announcement here
-          </h2>
+          <h2 className="prefooter_heading">Join the announcement here</h2>
 
           <p className="prefooter_subheading">
-            From zero to lit in one click – <strong>Lowercase Events</strong> got you!
+            From zero to lit in one click – <strong>Lowercase Events</strong>{" "}
+            got you!
           </p>
 
           {/* FORM */}
           <form className="prefooter_form" onSubmit={submit}>
-
             <div className="prefooter_form_row">
-
               <input
                 type="tel"
                 name="phone"
@@ -143,13 +150,12 @@ const Prefooter = () => {
               />
 
               <button type="submit" disabled={loading}>
-                {loading ? "..." : "Submit"}
+                {loading ? "Submitting..." : "Submit"}
               </button>
-
             </div>
 
             {/* City Dropdown */}
-            <select
+            {/* <select
               name="city"
               value={formData.city}
               onChange={handleChange}
@@ -163,21 +169,41 @@ const Prefooter = () => {
                   {city}
                 </option>
               ))}
+            </select> */}
+
+            <select
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              className={`prefooter_city ${
+                formData.city === "" ? "placeholder" : ""
+              }`}
+              required
+            >
+              <option value="" disabled hidden>
+                Select your city*
+              </option>
+
+              {cities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
             </select>
 
             {/* Checkbox */}
             <label className="prefooter_checkbox">
               <input type="checkbox" required />
-              <span>Join the announcement here</span>
+              <span>
+                By submitting this form, you agree to our Privacy Policy
+              </span>
             </label>
-
           </form>
 
-          <p className="prefooter_privacy">
+          {/* <p className="prefooter_privacy">
             By submitting this form, you agree to our{" "}
             <span>Privacy Policy</span>.
-          </p>
-
+          </p> */}
         </div>
       </div>
     </section>

@@ -23,8 +23,8 @@ const Navbartoplogo = () => {
         <Link to="/events" className="navbar-items">
           EVENTS
         </Link>
-        <Link to="/photos" className="navbar-items">
-          PHOTOS 
+        <Link to="/albums" className="navbar-items">
+        ALBUMS 
         </Link>
         <Link to="/artists" className="navbar-items">
           ARTISTS

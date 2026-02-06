@@ -56,7 +56,7 @@ With numerous awards, chart-topping releases, and billions of global streams, Dr
 
   {
     id: "a-boogie",
-    name: "A Boogie Wit Da Hoodie",
+    name: "A Boogie",
 
     images: {
       main: b1,
@@ -106,7 +106,7 @@ With multiple platinum-certified releases and a strong global fanbase, Gunna con
 
   {
     id: "kehlani",
-    name: "Kehlani",
+    name: "KEHLANI",
 
     images: {
       main: k1,
@@ -156,7 +156,7 @@ In addition to his solo success, PARTYNEXTDOOR is an accomplished songwriter who
 
   {
     id: "don-toliver",
-    name: "Don Toliver",
+    name: "DON TOLIVER",
 
     images: {
       main: d1,
