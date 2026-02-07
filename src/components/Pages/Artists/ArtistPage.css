@@ -83,7 +83,7 @@
 /* ================= GALLERY ================= */
 
 .left-section h3 {
-  margin: 25px 0 15px;
+  margin: 0px 0 15px 00;
   font-size: 20px;
   font-weight: 600;
 }
@@ -251,4 +251,14 @@
   .right-section {
     margin-top: 20px;
   }
+}
+
+
+
+.arts_bgrphy{
+
+
+  margin: 15px 0 15px 00;
+  font-size: 20px;
+  font-weight: 600;
 }

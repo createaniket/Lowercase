@@ -83,8 +83,7 @@ const Albumnew = () => {
       <div className="new_albums_head_plus_serch_box_cont">
         <p className="albumphotopage_heading">ALBUMS</p>
 
-
-<BrandLogoCarouselforAlbum />
+        <BrandLogoCarouselforAlbum />
         <p className="album_page_new_top_txt">
           Easily <span>view, share</span> and <span>download</span> your photos
         </p>
@@ -130,9 +129,11 @@ const Albumnew = () => {
                 <p className="beAlbumnew_venue">{album.venue}</p>
 
                 <div className="beAlbumnew_tags">
-                  {album.tags?.map((tag, index) => (
-                    <span key={index}>{tag}</span>
-                  ))}
+                  {album.tags
+                    ?.flatMap((tag) => tag.split(",")) // comma se split
+                    .map((tag, index) => (
+                      <span key={index}>{tag.trim()}</span> // extra space remove
+                    ))}
                 </div>
               </div>
             </div>

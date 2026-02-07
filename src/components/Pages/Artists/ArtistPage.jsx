@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import artistsData from "./artistData";
 import Navbartoplogo from "../../navbar/Navbartoplogo";
 import Prefooter from "../../footer/Prefooter";
@@ -26,17 +26,26 @@ const ArtistPage = () => {
           <h1>{artist.name}</h1>
 
           <div className="header-actions">
-            <button className="play-btn">LIRE</button>
-            <button className="follow-btn">ABONNÉ</button>
-            <button className="more-btn">•••</button>
+            <Link to="/artists">
+            <button className="play-btn">Back to all Artists</button>
+            </Link>
+
+            <Link to="/">
+            <button className="follow-btn">Home</button>
+
+            </Link>
+
           </div>
         </div>
+
+        <h3>{artist.articleTitle}</h3>
 
         {/* Content */}
         <div className="artist-content">
           {/* Left */}
+  
           <div className="left-section">
-            <h3>Galerie d'images</h3>
+   
 
             <div className="gallery">
               <img src={artist.images.main} className="main-img" alt="" />
@@ -47,14 +56,14 @@ const ArtistPage = () => {
               </div>
             </div>
 
-            <h3>Biographie</h3>
+            <p className="arts_bgrphy">Biography</p>
 
             <p className="bio">{artist.bio}</p>
           </div>
 
           {/* Right */}
           <div className="right-section">
-            <h3>Plus d'infos</h3>
+            <h3>Follow {artist.name} </h3>
 
             <ul className="social-links">
               <li>
@@ -68,7 +77,7 @@ const ArtistPage = () => {
               </li>
             </ul>
 
-            <h3>Découvert sur</h3>
+            {/* <h3>Découvert sur</h3> */}
 
             <div className="playlist">
               {artist.playlists.map((item, i) => (

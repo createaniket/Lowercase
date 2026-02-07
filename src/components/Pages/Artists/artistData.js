@@ -32,6 +32,7 @@ const artistsData = [
   {
     id: "drake",
     name: "Drake",
+    articleTitle: "Drake at XOYO, Lowercase Events, London",
 
     images: {
       main: drake1,
@@ -57,6 +58,7 @@ With numerous awards, chart-topping releases, and billions of global streams, Dr
   {
     id: "a-boogie",
     name: "A Boogie",
+    articleTitle:"A Boogie, Lowercase Events, London",
 
     images: {
       main: b1,
@@ -82,6 +84,7 @@ With multiple platinum-certified records, billions of streams, and collaboration
   {
     id: "gunna",
     name: "Gunna",
+    articleTitle:"Gunna, Lowercase Events, London",
 
     images: {
       main: g1,
@@ -107,6 +110,7 @@ With multiple platinum-certified releases and a strong global fanbase, Gunna con
   {
     id: "kehlani",
     name: "KEHLANI",
+    articleTitle:"Kehlani, Lowercase Events, London",
 
     images: {
       main: k1,
@@ -132,6 +136,7 @@ Known for her artistic authenticity and strong connection with her audience, Keh
   {
     id: "partynextdoor",
     name: "PARTYNEXTDOOR",
+    articleTitle:"Partynextdoor, Lowercase Events, London",
 
     images: {
       main: p1,
@@ -157,6 +162,7 @@ In addition to his solo success, PARTYNEXTDOOR is an accomplished songwriter who
   {
     id: "don-toliver",
     name: "DON TOLIVER",
+    articleTitle:"Don Toliver, Lowercase Events, London",
 
     images: {
       main: d1,
