@@ -138,49 +138,57 @@ const Prefooter = () => {
 
           {/* FORM */}
           <form className="prefooter_form" onSubmit={submit}>
-            <div className="prefooter_form_row">
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your number*"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your number*"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
 
-              <button type="submit" disabled={loading}>
-                {loading ? "Submitting..." : "Submit"}
-              </button>
+
+
+<div className="pre_footer_right_sms_sctn">
+
+
+
+<div className="prefooter_form_row">
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className={`prefooter_city ${
+                  formData.city === "" ? "placeholder" : ""
+                }`}
+                required
+              >
+                <option value="" disabled hidden>
+                  Select your city*
+                </option>
+
+                {cities.map((city, index) => (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+
+              {/* Checkbox */}
+              <label className="prefooter_checkbox">
+                <input type="checkbox" required />
+                <span>
+                  By submitting this form, you agree to our Privacy Policy
+                </span>
+              </label>
             </div>
 
+            <button type="submit" disabled={loading}>
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+</div>
 
-            <select
-              name="city"
-              value={formData.city}
-              onChange={handleChange}
-              className={`prefooter_city ${
-                formData.city === "" ? "placeholder" : ""
-              }`}
-              required
-            >
-              <option value="" disabled hidden>
-                Select your city*
-              </option>
 
-              {cities.map((city, index) => (
-                <option key={index} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
-
-            {/* Checkbox */}
-            <label className="prefooter_checkbox">
-              <input type="checkbox" required />
-              <span>
-                By submitting this form, you agree to our Privacy Policy
-              </span>
-            </label>
           </form>
         </div>
       </div>

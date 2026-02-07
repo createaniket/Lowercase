@@ -3,6 +3,11 @@
   padding: 10px 0;
 }
 
+
+.prefooter_chckbox_mbl{
+
+  display: none;
+}
 .prefooter_main {
   max-width: 1200px;
   margin: auto;
@@ -56,8 +61,9 @@
 }
 
 .prefooter_form_row {
-  display: flex;
-  gap: 12px;
+
+
+  width: 75%;
 }
 
 .prefooter_form input {
@@ -107,6 +113,7 @@
   font-size: 16px;
   cursor: pointer;
   transition: all 0.25s ease;
+  height: 52px;
 }
 
 .prefooter_form button:hover {
@@ -138,12 +145,27 @@
 
 
 
+.pre_footer_right_sms_sctn{
+
+  display: flex;
+justify-content: space-between;
+}
 
 
 
 
+.prefooter_checkbox{
 
+  margin-top: 10px;
+  font-size: 12px;
 
+}
+
+.prefooter_checkbox input[type="checkbox"] {
+
+  height: 10px;
+
+}
 
 /* ===== Modern Black Dropdown ===== */
 
@@ -231,22 +253,17 @@
     margin: auto;
   }
 
+  .pre_footer_right_sms_sctn{
+    flex-direction: column;
+    gap: 20px;
+  }
 
+  .prefooter_form_row{
+    width: 100%;
+  }
 
-    /* Keep normal order */
-    .prefooter_form {
-      flex-direction: column;
-    }
-  
-    /* Checkbox BEFORE button */
-    .prefooter_checkbox {
-      order: 1;
-    }
-  
-    /* Button AFTER checkbox */
-    .prefooter_form button {
-      order: 2;
-    }
-
+   .prefooter_city {
+    width: 100%;
+  }
 
 }
