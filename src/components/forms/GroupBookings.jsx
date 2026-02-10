@@ -7,6 +7,8 @@ import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
 
+import SEO from "../SEO";
+
 const GroupBookings = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -75,6 +77,13 @@ const GroupBookings = () => {
   return (
     <>
       <Navbartoplogo />
+
+      <SEO
+  title="Group Bookings"
+  description="Book group tickets for parties and club nights."
+  url="/group-bookings"
+/>
+
 
       <div className="groupbookings_page">
         <h2 className="group_heading">Group bookings and Special Requests</h2>

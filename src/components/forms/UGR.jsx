@@ -5,6 +5,7 @@ import axios from "axios";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
+import SEO from "../SEO";
 
 const UGR = () => {
   const [formData, setFormData] = useState({
@@ -73,6 +74,13 @@ const UGR = () => {
 
   return (
     <>
+
+<SEO
+  title="University Partners"
+  description="Official university partnership programs."
+  url="/university-partners"
+/>
+
       <Navbartoplogo />
 
       <div className="ugrWrapper">

@@ -7,6 +7,7 @@ import Navbartoplogo from "../../navbar/Navbartoplogo";
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import BrandLogoCarouselforAlbum from "../../brandscarousel/BrandLogoCarouselforAlbum";
+import SEO from "../../SEO";
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -78,6 +79,12 @@ const Albumnew = () => {
 
   return (
     <div className="me">
+      <SEO
+        title="Photo Albums"
+        description="Explore albums from our latest events."
+        url="/albums"
+      />
+
       <Navbartoplogo />
 
       <div className="new_albums_head_plus_serch_box_cont">

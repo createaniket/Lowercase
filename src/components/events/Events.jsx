@@ -5,6 +5,7 @@ import Footer from "../footer/Footer";
 
 import Prefooter from "../footer/Prefooter";
 import Navbartoplogo from "../navbar/Navbartoplogo";
+import SEO from "../SEO";
 
 const Events = () => {
   const widgetContainerRef = useRef(null);
@@ -32,6 +33,13 @@ const Events = () => {
 
   return (
     <div>
+<SEO
+  title="Upcoming Events"
+  description="Browse upcoming club nights, parties and ticketed events."
+  url="/events"
+/>
+
+
       <div className="event-container">
         <Navbartoplogo />
 

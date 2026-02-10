@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main -->
+  <url>
+    <loc>https://lowercaseevents.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Core Pages -->
+  <url><loc>https://lowercaseevents.com/about</loc></url>
+  <url><loc>https://lowercaseevents.com/events</loc></url>
+  <url><loc>https://lowercaseevents.com/artists</loc></url>
+  <url><loc>https://lowercaseevents.com/photos</loc></url>
+  <url><loc>https://lowercaseevents.com/albums</loc></url>
+
+  <!-- Forms -->
+  <url><loc>https://lowercaseevents.com/contact</loc></url>
+  <url><loc>https://lowercaseevents.com/group-bookings</loc></url>
+  <url><loc>https://lowercaseevents.com/venues</loc></url>
+  <url><loc>https://lowercaseevents.com/university-partners</loc></url>
+
+  <!-- Info -->
+  <url><loc>https://lowercaseevents.com/privacy-policy</loc></url>
+  <url><loc>https://lowercaseevents.com/terms-and-conditions</loc></url>
+  <url><loc>https://lowercaseevents.com/support</loc></url>
+  <url><loc>https://lowercaseevents.com/careers</loc></url>
+
+  <!-- Promotions -->
+  <url><loc>https://lowercaseevents.com/advertise</loc></url>
+  <url><loc>https://lowercaseevents.com/advertise-with-us</loc></url>
+  <url><loc>https://lowercaseevents.com/collab</loc></url>
+
+</urlset>

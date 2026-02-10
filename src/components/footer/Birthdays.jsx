@@ -5,6 +5,7 @@ import axios from "axios";
 import Prefooter from "./Prefooter";
 import Footer from "./Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
+import SEO from "../SEO";
 
 const Birthdays = () => {
   const [data, setData] = useState({
@@ -34,6 +35,13 @@ const Birthdays = () => {
 
   return (
     <>
+
+<SEO
+  title="Birthday Parties"
+  description="Celebrate birthdays with exclusive party experiences."
+  url="/birthdays"
+/>
+
       <Navbartoplogo />
 
       <div className="birthdayWrapper">

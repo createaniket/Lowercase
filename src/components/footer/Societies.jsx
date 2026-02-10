@@ -6,6 +6,8 @@ import Prefooter from "./Prefooter";
 import Footer from "./Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
 
+import SEO from "../SEO";
+
 const Societies = () => {
 
   const [formData, setFormData] = useState({
@@ -69,6 +71,13 @@ const Societies = () => {
 
   return (
     <>
+
+<SEO
+  title="Student Societies"
+  description="Partner with us for college society events."
+  url="/socities"
+/>
+
       <Navbartoplogo />
 
       <div className="soc_wrapper">

@@ -13,6 +13,8 @@ import { IoHeart } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { FaShare } from "react-icons/fa";
 
+import SEO from "../../SEO";
+
 const Albumphotos = () => {
   const { id } = useParams();
 
@@ -105,6 +107,16 @@ const Albumphotos = () => {
   // ================= UI =================
   return (
     <div>
+      <SEO
+        title={albumTitle || "Event Album"}
+        description={
+          albumTitle
+            ? `Photos from ${albumTitle} by Lowercase Events`
+            : "Browse event photo albums by Lowercase Events"
+        }
+        url={`/photobyalbum/${id}`}
+      />
+
       <Navbartoplogo />
 
       <div className="albumphotosnew_dev">

@@ -6,6 +6,7 @@ import Footer from "../../footer/Footer";
 import Navbartoplogo from "../../navbar/Navbartoplogo";
 
 import faqData from "./faqdata";
+import SEO from "../../SEO";
 
 const Faq = () => {
   const [activeTab, setActiveTab] = useState("📞 Contact & Support");
@@ -40,6 +41,12 @@ const Faq = () => {
 
   return (
     <>
+    <SEO
+  title="Help & FAQ"
+  description="Frequently asked questions and support."
+  url="/support"
+/>
+
       <Navbartoplogo />
 
       <div className="faq-container">

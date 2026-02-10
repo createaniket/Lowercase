@@ -5,6 +5,7 @@ import axios from "axios";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
+import SEO from "../SEO";
 
 const Venues = () => {
   const [formData, setFormData] = useState({
@@ -73,6 +74,13 @@ const Venues = () => {
 
   return (
     <>
+
+<SEO
+  title="Venue Partnerships"
+  description="List your venue and collaborate with Lowercase Events."
+  url="/venues"
+/>
+
       <Navbartoplogo />
 
       <div className="venuesWrapper">

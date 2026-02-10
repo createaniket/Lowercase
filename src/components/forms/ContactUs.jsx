@@ -7,6 +7,8 @@ import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
 import { Link } from "react-router-dom";
 
+import SEO from "../SEO";
+
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -74,6 +76,12 @@ const ContactUs = () => {
 
   return (
     <>
+    <SEO
+  title="Contact Us"
+  description="Get in touch with Lowercase Events for bookings and support."
+  url="/contact"
+/>
+
       <Navbartoplogo />
       <div className="contactWrapper">
         {/* Left Content */}

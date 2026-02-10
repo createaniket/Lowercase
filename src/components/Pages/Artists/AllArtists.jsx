@@ -5,9 +5,18 @@ import Prefooter from "../../footer/Prefooter";
 import Footer from "../../footer/Footer";
 import "./AllArtists.css";
 
+import SEO from "../../SEO";
+
 const AllArtists = () => {
   return (
     <div>
+
+<SEO
+  title="Artists"
+  description="Discover DJs, performers and artists collaborating with us."
+  url="/artists"
+/>
+
       <Navbartoplogo />
 
 

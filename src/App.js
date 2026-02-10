@@ -35,10 +35,13 @@ import AllArtists from "./components/Pages/Artists/AllArtists";
 import ScrollToTop from "./components/ScrollToTop";
 import UniversityPartners from "./components/forms/UniversityPartners";
 import Advertisewithus from "./components/forms/Advertisewithus";
+import AnalyticsTracker from "./AnalyticsTracker";
 
 function App() {
   return (
     <BrowserRouter>
+
+<AnalyticsTracker />
 
     <ScrollToTop />
       <Routes>

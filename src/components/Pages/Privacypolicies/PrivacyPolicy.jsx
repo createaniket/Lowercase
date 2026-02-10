@@ -4,10 +4,18 @@ import Prefooter from "../../footer/Prefooter";
 import Footer from "../../footer/Footer";
 
 import Navbartoplogo from "../../navbar/Navbartoplogo";
+import SEO from "../../SEO";
 
 const PrivacyPolicy = () => {
   return (
     <>
+
+<SEO
+  title="Privacy Policy"
+  description="Read our privacy policy and data usage terms."
+  url="/privacy-policy"
+/>
+
       <Navbartoplogo />
 
       <div className="policyPage">

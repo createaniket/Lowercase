@@ -6,6 +6,8 @@ import Prefooter from "../../footer/Prefooter";
 import Footer from "../../footer/Footer";
 import "./ArtistPage.css";
 
+import SEO from "../../SEO";
+
 const ArtistPage = () => {
   const { id } = useParams();
 
@@ -18,6 +20,13 @@ const ArtistPage = () => {
 
   return (
     <>
+
+<SEO
+  title={artist?.name || "Artist"}
+  description={`Explore events and performances by ${artist?.name}`}
+  url={`/artist/${id}`}
+/>
+
       <Navbartoplogo />
 
       <div className="artist-page">

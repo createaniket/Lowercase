@@ -5,6 +5,7 @@ import axios from "axios";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
+import SEO from "../SEO";
 
 const Advertise = () => {
   const [formData, setFormData] = useState({
@@ -72,6 +73,12 @@ const Advertise = () => {
 
   return (
     <>
+      <SEO
+        title="Advertise With Us"
+        description="Promote your brand through our events."
+        url="/advertise"
+      />
+
       <Navbartoplogo />
 
       <div className="bwformpage">

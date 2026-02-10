@@ -4,10 +4,17 @@ import "./termsAndConditions.css";
 import Prefooter from "../../footer/Prefooter";
 import Footer from "../../footer/Footer";
 import Navbartoplogo from "../../navbar/Navbartoplogo";
+import SEO from "../../SEO";
 
 const TermsAndConditions = () => {
   return (
     <>
+    <SEO
+  title="Terms & Conditions"
+  description="Our terms and conditions for ticket purchases."
+  url="/terms-and-conditions"
+/>
+
       <Navbartoplogo />
 
       <div className="termsPage">

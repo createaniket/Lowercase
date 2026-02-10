@@ -19,6 +19,7 @@ import { Typewriter } from "react-simple-typewriter";
 import ShinyText from "../motionelements/Shinytextcomp";
 
 // import TrueFocus from "../motionelements/Truefocus";
+import SEO from "../SEO";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,17 +27,34 @@ const Homepage = () => {
 
   const [showtexttwo, setShowtexttwo] = useState(false);
 
-  setTimeout(() => {
-    setShowtexttwo(true);
-  }, 3500);
+
 
   useEffect(() => {
     setTimeout(() => {
       setIsVisible(true);
     }, 500);
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowtexttwo(true);
+    }, 3500);
+  
+    return () => clearTimeout(timer);
+  }, []);
+  
+
+
+
+
   return (
     <div className="homepage-container">
+      <SEO
+        title="Official Site"
+        description="Buy official tickets for club nights, freshers parties and student events."
+        url="/"
+      />
+
       <Navbar />
 
       <div className="belownavbar">

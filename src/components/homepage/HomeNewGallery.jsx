@@ -30,7 +30,7 @@ export default function Gallery() {
           `${BaseUrl}/api/album/get/6976425b7af04a2b9f8da4f1`
         );
   
-        console.log("the response of the albums", response.data.data);
+        // console.log("the response of the albums", response.data.data);
   
         const photos = response.data?.data?.photos || [];
   

@@ -5,6 +5,9 @@ import axios from "axios";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
+
+import SEO from "../SEO";
+
 const Careers = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -71,6 +74,13 @@ const Careers = () => {
 
   return (
     <>
+
+<SEO
+  title="Careers"
+  description="Join our team and grow with Lowercase Events."
+  url="/careers"
+/>
+
       <Navbartoplogo />
 
       <div className="bwformpage">
