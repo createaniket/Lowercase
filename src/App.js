@@ -37,6 +37,7 @@ import UniversityPartners from "./components/forms/UniversityPartners";
 import Advertisewithus from "./components/forms/Advertisewithus";
 import AnalyticsTracker from "./AnalyticsTracker";
 import JobApply from "./components/forms/JobApply";
+import NotFound from "./components/Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
 
       <ScrollToTop />
       <Routes>
+      <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/group-bookings" element={<GroupBookings />} />
