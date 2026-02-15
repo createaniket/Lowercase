@@ -76,13 +76,13 @@ const ArtistPage = () => {
 
             <ul className="social-links">
               <li>
-                <a href={artist.socials.instagram}>Instagram</a>
+                <a href={artist.socials.instagram} target="_blank" rel="noreferrer">Instagram</a>
               </li>
               <li>
-                <a href={artist.socials.facebook}>Facebook</a>
+                <a href={artist.socials.facebook} target="_blank" rel="noreferrer">Facebook</a>
               </li>
               <li>
-                <a href={artist.socials.wikipedia}>Wikipedia</a>
+                <a href={artist.socials.wikipedia} target="_blank" rel="noreferrer">Wikipedia</a>
               </li>
             </ul>
 
