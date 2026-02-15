@@ -1,54 +1,52 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Homepage.css";
+
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import LowerCaseLogo from "../assests/Lowercase-Events-Logo-Web.png";
+
 import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
 import Artists from "./Artistshome";
-
 import Prefooter from "../footer/Prefooter";
-
 import HomeNewGallery from "./HomeNewGallery";
-
 import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
 import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
 import BrandCreator from "./BrandCreator";
-import { Typewriter } from "react-simple-typewriter";
 
+import { Typewriter } from "react-simple-typewriter";
 import ShinyText from "../motionelements/Shinytextcomp";
 
-// import TrueFocus from "../motionelements/Truefocus";
 import SEO from "../SEO";
 
 const Homepage = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
 
+  const [isVisible, setIsVisible] = useState(false);
   const [showtexttwo, setShowtexttwo] = useState(false);
 
-
+  const sectionRef = useRef(null);
 
   useEffect(() => {
+
     setTimeout(() => {
       setIsVisible(true);
-    }, 500);
+    }, 400);
+
   }, []);
 
   useEffect(() => {
+
     const timer = setTimeout(() => {
       setShowtexttwo(true);
-    }, 3500);
-  
+    }, 2500);
+
     return () => clearTimeout(timer);
+
   }, []);
-  
-
-
-
 
   return (
     <div className="homepage-container">
+
       <SEO
         title="Official Site"
         description="Buy official tickets for club nights, freshers parties and student events."
@@ -57,89 +55,79 @@ const Homepage = () => {
 
       <Navbar />
 
-      <div className="belownavbar">
+      {/* HERO SECTION */}
+      <section className="belownavbar">
+
+        {/* VIDEO */}
         <video
           className="background-video"
-          src={
-            "https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4"
-          }
           autoPlay
-          loop
           muted
-        ></video>
-
-        <div
-          className={`vdo_home_content_main ${isVisible ? "visible" : ""}`}
-          ref={sectionRef}
+          loop
+          playsInline
+          preload="auto"
         >
+          <source
+            src="https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* CONTENT */}
+        <div
+          ref={sectionRef}
+          className={`vdo_home_content_main ${isVisible ? "visible" : ""}`}
+        >
+
+          {/* LOGO */}
           <div className="vdo_home_content_logo">
+
             <img
               src={LowerCaseLogo}
-              alt="Lowercase Logo"
+              alt="Lowercase Events Logo"
               className="rotating-logo"
             />
+
           </div>
 
+          {/* TEXT */}
           <div className="vdo_home_content_text">
-            <p className="vdohome_contentone">
-              <ShinyText
-                text="Music"
-                speed={2}
-                delay={0}
-                color="#b5b5b5"
-                shineColor="#ffffff"
-                spread={120}
-                direction="left"
-                yoyo={false}
-                pauseOnHover={false}
-                disabled={false}
-              />
 
-              <ShinyText
-                text="Space"
-                speed={2}
-                delay={0}
-                color="#b5b5b5"
-                shineColor="#ffffff"
-                spread={120}
-                direction="left"
-                yoyo={false}
-                pauseOnHover={false}
-                disabled={false}
-              />
+            <div className="vdohome_contentone">
 
-              <ShinyText
-                text="People"
-                speed={2}
-                delay={0}
-                color="#b5b5b5"
-                shineColor="#ffffff"
-                spread={120}
-                direction="left"
-                yoyo={false}
-                pauseOnHover={false}
-                disabled={false}
-              />
-            </p>
+              <ShinyText text="Music" speed={2} color="#b5b5b5" shineColor="#fff" />
+
+              <ShinyText text="Space" speed={2} color="#b5b5b5" shineColor="#fff" />
+
+              <ShinyText text="People" speed={2} color="#b5b5b5" shineColor="#fff" />
+
+            </div>
 
             {showtexttwo && (
+
               <div className="vdoheadhomepage">
+
                 <Typewriter
                   words={["Trusted by leading venues, artists, and partners."]}
-                  loop={50}
+                  loop={1}
                   cursor
                   cursorStyle="_"
-                  typeSpeed={80}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
+                  typeSpeed={60}
                 />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
 
+              </div>
+
+            )}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* OTHER SECTIONS */}
       <Brandslogocarousel />
+
       <Lowercaseticketwidget />
 
       <Modernphotos />
@@ -156,7 +144,6 @@ const Homepage = () => {
 
       <Footer />
 
-      {/* <Shinytextcomp /> */}
     </div>
   );
 };
