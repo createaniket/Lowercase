@@ -139,7 +139,7 @@ const Prefooter = () => {
           {/* FORM */}
           <form className="prefooter_form" onSubmit={submit}>
             <input
-              type="tel"
+              type="number"
               name="phone"
               placeholder="Enter your number*"
               value={formData.phone}

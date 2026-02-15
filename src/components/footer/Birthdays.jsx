@@ -70,7 +70,7 @@ const Birthdays = () => {
             />
 
             <input
-              type="tel"
+              type="number"
               placeholder="Mobile Number"
               value={data.mobile}
               onChange={(e) => setData({ ...data, mobile: e.target.value })}

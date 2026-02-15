@@ -71,136 +71,143 @@
 /* bharti */
 
 .event-container {
-    width: 100%;
-    min-height: 100vh; /* better than fixed height on mobile */
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-  }
+  width: 100%;
+  min-height: 100vh; /* better than fixed height on mobile */
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
   
-  /* Heading */
+}
+
+/* Heading */
+.event-heading {
+  color: #fff;
+  font-size: 36px;
+  margin: 140px auto 40px auto;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Cards */
+.artist-event {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.events-card {
+  width: 33.3%;
+  height: 60vh;
+}
+
+.events-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Year Section */
+.events-year {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.year-heading {
+  width: 100%;
+  height: auto;
+  color: #fff;
+  font-size: 80px;
+  font-weight: bold;
+  padding-left: 70px;
+}
+
+.year-events {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.margin{
+  margin-bottom: 180px;
+}
+/* ---------- Tablet ---------- */
+@media screen and (max-width: 1024px) {
   .event-heading {
-    color: #fff;
-    font-size: 36px;
-    margin: 180px auto 20px auto;
-    text-align: center;
-    font-weight: 700;
-    font-family: "Roboto", sans-serif;
+    font-size: 60px;
+    margin: 140px auto 20px auto;
   }
-  
-  /* Cards */
-  .artist-event {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
-  }
-  
+
   .events-card {
-    width: 33.3%;
-    height: 60vh;
+    width: 50%;
+    height: 45vh;
   }
-  
-  .events-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Year Section */
-  .events-year {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-  }
-  
+
   .year-heading {
-    width: 100%;
-    height: auto;
-    color: #fff;
-    font-size: 80px;
-    font-weight: bold;
-    padding-left: 70px;
+    font-size: 60px;
+    padding-left: 40px;
   }
-  
+}
+
+/* ---------- Mobile ---------- */
+@media screen and (max-width: 768px) {
+  .margin{
+  margin-bottom:5px;
+}
+  .event-heading {
+    font-size: 42px;
+    margin: 120px auto 10px auto;
+  }
+
+  .artist-event {
+    margin-top: 30px;
+  }
+
+  .events-card {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .year-heading {
+    font-size: 42px;
+    padding-left: 20px;
+    text-align: center;
+  }
+
   .year-events {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  /* ---------- Tablet ---------- */
-  @media screen and (max-width: 1024px) {
-    .event-heading {
-      font-size: 60px;
-      margin: 140px auto 20px auto;
-    }
-  
-    .events-card {
-      width: 50%;
-      height: 45vh;
-    }
-  
-    .year-heading {
-      font-size: 60px;
-      padding-left: 40px;
-    }
+}
+
+/* ---------- Small Phones ---------- */
+@media screen and (max-width: 480px) {
+  .event-heading {
+    font-size: 32px;
+    margin: 110px auto 10px auto;
   }
-  
-  /* ---------- Mobile ---------- */
-  @media screen and (max-width: 768px) {
-    .event-heading {
-      font-size: 42px;
-      margin: 120px auto 10px auto;
-    }
-  
-    .artist-event {
-      margin-top: 30px;
-    }
-  
-    .events-card {
-      width: 100%;
-      height: 40vh;
-    }
-  
-    .year-heading {
-      font-size: 42px;
-      padding-left: 20px;
-      text-align: center;
-    }
-  
-    .year-events {
-      justify-content: center;
-    }
+
+  .events-card {
+    height: 32vh;
   }
-  
-  /* ---------- Small Phones ---------- */
-  @media screen and (max-width: 480px) {
-    .event-heading {
-      font-size: 32px;
-      margin: 110px auto 10px auto;
-    }
-  
-    .events-card {
-      height: 32vh;
-    }
+}
+
+/* ---------- Ultra Wide Screens ---------- */
+@media screen and (min-width: 2400px) {
+  .event-heading {
+    margin: 250px auto 20px auto;
+    font-size: 100px;
   }
-  
-  /* ---------- Ultra Wide Screens ---------- */
-  @media screen and (min-width: 2400px) {
-    .event-heading {
-      margin: 250px auto 20px auto;
-      font-size: 100px;
-    }
-  
-    .year-heading {
-      font-size: 100px;
-    }
-  
-    .events-card {
-      height: 70vh;
-    }
+
+  .year-heading {
+    font-size: 100px;
   }
+
+  .events-card {
+    height: 70vh;
+  }
+}

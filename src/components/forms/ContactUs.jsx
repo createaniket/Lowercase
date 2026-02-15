@@ -5,7 +5,7 @@ import axios from "axios";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
 import Navbartoplogo from "../navbar/Navbartoplogo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 import SEO from "../SEO";
 
@@ -21,6 +21,8 @@ const ContactUs = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+const [showThankYou, setShowThankYou] = useState(false);
 
   // Handle Input Change
   const handleChange = (e) => {
@@ -30,52 +32,102 @@ const ContactUs = () => {
     });
   };
 
-  // Handle Form Submit
+  // original submit
+  // const submit = async (e) => {
+  //   e.preventDefault();
+
+    
+  //   if (!formData.name || !formData.email || !formData.phone) {
+  //     alert("Please fill all required fields");
+  //     return;
+  //   }
+
+  //   try {
+  //     setLoading(true);
+
+  //     const response = await axios.post(
+  //       `${baseUrl}/api/form/${formData.formType}`,
+  //       {
+  //         name: formData.name,
+  //         email: formData.email,
+  //         phone: formData.phone,
+  //         data: formData.data,
+  //       }
+  //     );
+
+  //     console.log("Response:", response.data);
+
+  //     alert("Message sent successfully!");
+
+      
+  //     setFormData({
+  //       name: "",
+  //       phone: "",
+  //       email: "",
+  //       data: "",
+  //       formType: "contact",
+  //     });
+  //   } catch (error) {
+  //     console.error("Error:", error);
+
+  //     alert("Something went wrong. Please try again.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+  // bharti
   const submit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Validation
-    if (!formData.name || !formData.email || !formData.phone) {
-      alert("Please fill all required fields");
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.phone) {
+    alert("Please fill all required fields");
+    return;
+  }
 
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const response = await axios.post(
-        `${baseUrl}/api/form/${formData.formType}`,
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          data: formData.data,
-        }
-      );
+    await axios.post(`${baseUrl}/api/form/${formData.formType}`, {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      data: formData.data,
+    });
 
-      console.log("Response:", response.data);
+    // Show thank you screen
+    setShowThankYou(true);
 
-      alert("Message sent successfully!");
+    // Reset form (optional)
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      data: "",
+      formType: "contact",
+    });
 
-      // Reset
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        data: "",
-        formType: "contact",
-      });
-    } catch (error) {
-      console.error("Error:", error);
+    // Redirect after 0.5 sec
+    setTimeout(() => {
+      navigate("/");
+    }, 1500);
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
-      alert("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <>
+
+    {showThankYou && (
+  <div className="thankyou-overlay">
+    <p>Thank you! We’ll get back to you 😊</p>
+  </div>
+)}
+
     <SEO
   title="Contact Us"
   description="Get in touch with Lowercase Events for bookings and support."
@@ -115,7 +167,7 @@ const ContactUs = () => {
             />
 
             <input
-              type="tel"
+              type="number"
               name="phone"
               placeholder="Mobile Number"
               value={formData.phone}

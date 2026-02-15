@@ -130,7 +130,7 @@ const Advertisewithus = () => {
               />
 
               <input
-                type="tel"
+                type="number"
                 name="phone"
                 placeholder="Mobile Number"
                 value={formData.phone}

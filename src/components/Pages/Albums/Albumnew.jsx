@@ -16,39 +16,48 @@ const Albumnew = () => {
 
   const [albums, setAlbums] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     fetchAlbums();
   }, []);
 
+  const fetchAlbums = async () => {
+  try {
+    setLoading(true);
+    const response = await axios.get(`${baseUrl}/api/album/getall`);
+
+    const filteredData = response.data.data.filter(
+      (album) => album._id !== "6976425b7af04a2b9f8da4f1"
+    );
+
+    setAlbums(filteredData);
+  } catch (error) {
+    console.error("Error fetching albums:", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+
+
   // const fetchAlbums = async () => {
   //   try {
   //     const response = await axios.get(`${baseUrl}/api/album/getall`);
 
-  //     const FilteredData = response.data.data.filter((album) => album.id !== "6976425b7af04a2b9f8da4f1");
+  //     const filteredData = response.data.data.filter(
+  //       (album) => album._id !== "6976425b7af04a2b9f8da4f1"
+  //     );
 
-  //     console.log("Fetched Albums:", FilteredData);
-  //     setAlbums(response.data.data || []);
+  //     console.log("Fetched Albums:", filteredData);
+
+  //     setAlbums(filteredData);
   //   } catch (error) {
   //     console.error("Error fetching albums:", error);
   //   }
   // };
-
-  const fetchAlbums = async () => {
-    try {
-      const response = await axios.get(`${baseUrl}/api/album/getall`);
-
-      const filteredData = response.data.data.filter(
-        (album) => album._id !== "6976425b7af04a2b9f8da4f1"
-      );
-
-      console.log("Fetched Albums:", filteredData);
-
-      setAlbums(filteredData);
-    } catch (error) {
-      console.error("Error fetching albums:", error);
-    }
-  };
 
   const SendToPhotobyAlbum = (album) => {
     navigate(`/photobyalbum/${album._id}`);
@@ -113,7 +122,47 @@ const Albumnew = () => {
       </div>
 
       {/* Albums Grid */}
+
       <div className="beAlbumnew_container">
+  {loading ? (
+    [...Array(9)].map((_, i) => (
+      <div key={i} className="beAlbumnew_card skeleton" />
+    ))
+  ) : filteredAlbums.length > 0 ? (
+    filteredAlbums.map((album) => (
+      <div
+        className="beAlbumnew_card"
+        key={album._id}
+        onClick={() => SendToPhotobyAlbum(album)}
+      >
+        <img
+          src={album.coverPhoto}
+          alt={album.title}
+          className="beAlbumnew_image"
+          loading="lazy"
+        />
+
+        <div className="beAlbumnew_overlay">
+          <h3 className="beAlbumnew_title">{album.title}</h3>
+          <p className="beAlbumnew_date">{formatDate(album.date)}</p>
+          <p className="beAlbumnew_venue">{album.venue}</p>
+
+          <div className="beAlbumnew_tags">
+            {album.tags
+              ?.flatMap((tag) => tag.split(","))
+              .map((tag, index) => (
+                <span key={index}>{tag.trim()}</span>
+              ))}
+          </div>
+        </div>
+      </div>
+    ))
+  ) : (
+    <p className="no_album_found">No albums found 😕</p>
+  )}
+</div>
+
+      {/* <div className="beAlbumnew_container">
         {filteredAlbums.length > 0 ? (
           filteredAlbums.map((album) => (
             <div
@@ -127,7 +176,7 @@ const Albumnew = () => {
                 className="beAlbumnew_image"
               />
 
-              {/* Overlay */}
+             
               <div className="beAlbumnew_overlay">
                 <h3 className="beAlbumnew_title">{album.title}</h3>
 
@@ -137,9 +186,9 @@ const Albumnew = () => {
 
                 <div className="beAlbumnew_tags">
                   {album.tags
-                    ?.flatMap((tag) => tag.split(",")) // comma se split
+                    ?.flatMap((tag) => tag.split(",")) 
                     .map((tag, index) => (
-                      <span key={index}>{tag.trim()}</span> // extra space remove
+                      <span key={index}>{tag.trim()}</span> 
                     ))}
                 </div>
               </div>
@@ -148,7 +197,7 @@ const Albumnew = () => {
         ) : (
           <p className="no_album_found">No albums found 😕</p>
         )}
-      </div>
+      </div> */}
 
       <Prefooter />
       <Footer />

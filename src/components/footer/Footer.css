@@ -1,7 +1,3 @@
-/* .footer_main_parent {
-  border: 2px solid red;
-} */
-
 .lisenced {
   display: flex;
   /* border: 2px solid white; */
@@ -23,14 +19,17 @@
 
 .lisenced-note {
   color: #fff;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: 900;
   text-align: center;
 }
 .lisenced-note a {
   color: #fff;
-  font-size: 12px;
+  font-size: 7px;
   font-weight: 900;
+}
+.li{
+  font-size: 3px;
 }
 
 .footer {
@@ -107,7 +106,7 @@
   text-decoration: none;
   margin: 00 5px;
   font-weight: 900;
-  font-size: 10px;
+  font-size: 6px;
 }
 
 .footer_main_parent a:hover,

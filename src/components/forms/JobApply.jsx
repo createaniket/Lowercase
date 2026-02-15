@@ -97,15 +97,7 @@ function JobApply() {
 
       await axios.post(`${baseUrl}/api/form/${formData.formType}`, payload);
 
-      //  const res = await axios.post(
-      //   `${baseUrl}/api/form/job-application`,
-      //   payload,
-      //   {
-      //     headers: {
-      //       "Content-Type": "multipart/form-data",
-      //     },
-      //   }
-      // );
+      
 
       alert("Application sent successfully ✅");
 
@@ -126,61 +118,13 @@ function JobApply() {
     }
   };
 
-  //     e.preventDefault();
-
-  //     if (
-  //       !formData.name ||
-  //       !formData.email ||
-  //       !formData.phone ||
-  //       !formData.cv ||
-  //       !formData.letter
-  //     ) {
-  //       alert("Please fill all required fields");
-  //       return;
-  //     }
-
-  //     try {
-  //       setLoading(true);
-
-  //       const payload = new FormData();
-  //       payload.append("name", formData.name);
-  //       payload.append("email", formData.email);
-  //       payload.append("phone", formData.phone);
-  //       payload.append("role", formData.role);
-  //       payload.append("letter", formData.letter);
-  //       payload.append("cv", formData.cv);
-
-  //       const res = await axios.post(
-  //         `${baseUrl}/api/form/${formData.formType}`,
-  //         payload,
-  //         { headers: { "Content-Type": "multipart/form-data" } },
-  //       );
-
-  //       alert("Uploaded successfully ✅");
-
-  //       setFormData({
-  //         name: "",
-  //         phone: "",
-  //         email: "",
-  //         role: "Job: Event Manager",
-  //         letter: null,
-  //         cv: null,
-  //         formType: "contact",
-  //       });
-  //     } catch (err) {
-  //       console.error(err);
-  //       alert("Upload failed ❌");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
+  
   return (
     <>
       <Navbartoplogo />
 
       <div className="contactWrapper">
-        {/* Left Content */}
+        
         <div className="contactLeft">
           <h1>{job.title}</h1>
 
@@ -191,7 +135,7 @@ function JobApply() {
           <ul>
             {job.duties.map((item, i) => (
               <li key={i}>{item}</li>
-            ))}
+            ))} 
           </ul>
 
           <h3 className="looking">What we’re looking for</h3>
@@ -203,7 +147,7 @@ function JobApply() {
         </div>
 
         <div className="contactRight">
-          {/* Right Form */}
+           <h1 className="contactRightHeading">Please fill the form</h1>
           <form className="bwForm" onSubmit={submit}>
             <input
               type="text"
@@ -215,7 +159,7 @@ function JobApply() {
             />
 
             <input
-              type="tel"
+              type="number"
               name="phone"
               placeholder="Mobile Number"
               value={formData.phone}
@@ -236,13 +180,7 @@ function JobApply() {
 
             <input type="text" name="role" value={formData.role} readOnly />
 
-            {/* <input
-              type="file"
-              name="letter"
-              accept=".pdf,.doc,.docx"
-              onChange={handleFileChange}
-              required
-            /> */}
+            
 
             <label className="fileBox">
               {formData.letter ? formData.letter.name : "Upload Cover Letter"}
@@ -266,7 +204,7 @@ function JobApply() {
               />
             </label>
 
-            {/* <input type="file" accept=".pdf,.doc,.docx" name="cv" onChange={handleFileChange} required /> */}
+           
 
             <button type="submit">{loading ? "Sending..." : "Submit"}</button>
           </form>

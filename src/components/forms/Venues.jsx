@@ -109,7 +109,7 @@ const Venues = () => {
             />
 
             <input
-              type="tel"
+              type="number"
               name="phone"
               placeholder="Mobile Number"
               value={formData.phone}

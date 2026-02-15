@@ -74,7 +74,7 @@ const SmsSignup = () => {
       <h2>SMS Sign Up</h2>
 
       <input
-        type="tel"
+        type="number"
         name="phone"
         placeholder="Mobile Number"
         value={formData.phone}

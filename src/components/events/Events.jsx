@@ -21,7 +21,7 @@ const Events = () => {
 
         <div className="event-heading">EVENTS</div>
 
-        <div className="belownavbar">
+        {/* <div className="belownavbar">
           <video
             className="background-video"
             src="https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4"
@@ -29,14 +29,17 @@ const Events = () => {
             loop
             muted
           />
-        </div>
+        </div> */}
 
         {/* Widget Container */}
         {/* <div className="events_page_widget_container">
           <div className="fatsoma_tkt_wgt_main"></div>
         </div> */}
+       <div className="margin">
 
+      
         <FatsomaIframe />
+         </div>
 
         <Prefooter />
         <Footer />

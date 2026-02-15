@@ -47,7 +47,7 @@ const ArtistPage = () => {
           </div>
         </div>
 
-        <h3>{artist.articleTitle}</h3>
+        <h3 >{artist.articleTitle}</h3>
 
         {/* Content */}
         <div className="artist-content">

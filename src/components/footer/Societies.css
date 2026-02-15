@@ -18,19 +18,19 @@
 
 /* Left Section */
 .soc_left {
-  width: 45%;
+  width: 50%;
   color: #fff;
 }
 
 .soc_title {
-  font-size: 42px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 12px;
 }
 
 /* Blue Text */
 .soc_highlight {
-  font-size: 32px;
+  font-size: 44px;
   font-weight: 500;
   color: #4ecbff;
   line-height: 1.4;
@@ -93,11 +93,11 @@
   }
 
   .soc_title {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .soc_highlight {
-    font-size: 20px;
+    font-size: 34px;
   }
 }
 
@@ -120,7 +120,7 @@
   }
 
   .soc_highlight {
-    font-size: 18px;
+    font-size: 34px;
   }
 
   .soc_form {
@@ -135,6 +135,6 @@
   }
 
   .soc_highlight {
-    font-size: 16px;
+    font-size: 34px;
   }
 }
