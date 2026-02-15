@@ -25,16 +25,48 @@ const Albumphotos = () => {
   const BaseUrl = process.env.REACT_APP_BASE_URL;
 
   // ================= FETCH ALBUM =================
+  // const FetchAlbumById = async () => {
+  //   try {
+  //     const res = await axios.get(`${BaseUrl}/api/album/get/${id}`);
+
+  //     setAlbumTitle(res.data?.data?.club);
+  //     console.log("Fetched Album:", res.data.data);
+
+  //     const FilteredPhotos = res.data?.data?.photos?.filter((photo) => photo.url.contain = 'png, jpg, jpeg, webp, avif, gif');
+  //     setAlbumPhotos(FilteredPhotos || []);
+  //   } catch (err) {
+  //     console.log("Fetch Error:", err);
+  //   }
+  // };
+
+
   const FetchAlbumById = async () => {
     try {
       const res = await axios.get(`${BaseUrl}/api/album/get/${id}`);
-
-      setAlbumTitle(res.data?.data?.club);
-      setAlbumPhotos(res.data?.data?.photos || []);
+  
+      const albumData = res?.data?.data;
+  
+      setAlbumTitle(albumData?.club || "");
+  
+      console.log("Fetched Album:", albumData);
+  
+      // allowed extensions
+      const allowedExtensions = ["png", "jpg", "jpeg", "webp", "avif", "gif"];
+  
+      const filteredPhotos = albumData?.photos?.filter((photo) => {
+        if (!photo?.url) return false;
+  
+        const extension = photo.url.split(".").pop().toLowerCase();
+        return allowedExtensions.includes(extension);
+      });
+  
+      setAlbumPhotos(filteredPhotos || []);
+  
     } catch (err) {
       console.log("Fetch Error:", err);
     }
   };
+  
 
   useEffect(() => {
     FetchAlbumById();

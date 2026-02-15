@@ -1,88 +1,102 @@
 .policyPage {
-    background: #000;
-    color: #fff;
-    min-height: 100vh;
-    padding: 70px 18px;
-    margin: 50px 00 00 00;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 70px 18px;
+  margin: 80px 0 0 0;
+  text-align: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.policyContainer {
+  width: min(1000px, 95vw);
+  margin: 0 auto;
+}
+
+.policyHeader {
+  margin-bottom: 24px;
+}
+
+.policyTitle {
+  font-size: clamp(22px, 2.4vw, 36px);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.policySub {
+  font-size: 10px;
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* main content */
+.policyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* each section card */
+.policySection {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center; /* ensure everything inside is centered */
+}
+
+/* section headings */
+.policySection h2 {
+  font-size: 10px;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+/* paragraph text */
+.policySection p {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 10px;
+  opacity: 0.92;
+  text-align: center;
+}
+
+/* centered bullet list */
+.policyList {
+  list-style-position: inside;  /* bullet comes with text */
+  padding-left: 0;              /* remove default left padding */
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+/* list items */
+.policyList li {
+  margin: 6px 0;
+  font-size: 10px;
+  line-height: 1.75;
+  opacity: 0.92;
+  text-align: center;
+}
+
+/* footer */
+.policyFooter {
+  margin-top: 30px;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 10px;
+}
+
+/* mobile responsive */
+@media (max-width: 600px) {
+  .policyPage {
+    padding: 55px 14px;
   }
-  
-  .policyContainer {
-    width: min(1000px, 95vw);
-    margin: 0 auto;
-  }
-  
-  .policyHeader {
-    margin-bottom: 24px;
-  }
-  
-  .policyTitle {
-    font-size: clamp(22px, 2.4vw, 36px);
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-  }
-  
-  .policySub {
-    font-size: 10px;
-    opacity: 0.85;
-    line-height: 1.6;
-    margin: 0;
-  }
-  
-  .policyContent {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  
+
   .policySection {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.03);
-    padding: 18px;
-    border-radius: 14px;
+    padding: 14px;
   }
-  
-  .policySection h2 {
-    font-size: 10px;
-    margin: 0 0 12px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-  
-  .policySection p {
-    margin: 0;
-    line-height: 1.75;
-    font-size: 10px;
-    opacity: 0.92;
-  }
-  
-  .policyList {
-    padding-left: 18px;
-    margin: 10px 0 0 0;
-  }
-  
-  .policyList li {
-    margin: 6px 0;
-    font-size: 10px;
-    line-height: 1.75;
-    opacity: 0.92;
-  }
-  
-  .policyFooter {
-    margin-top: 30px;
-    text-align: center;
-    opacity: 0.7;
-    font-size: 10px;
-  }
-  
-  @media (max-width: 600px) {
-    .policyPage {
-      padding: 55px 14px;
-    }
-  
-    .policySection {
-      padding: 14px;
-    }
-  }
-  
+}
