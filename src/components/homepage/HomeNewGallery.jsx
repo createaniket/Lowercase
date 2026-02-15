@@ -27,7 +27,7 @@ export default function Gallery() {
     const FetchAlbumById = async () => {
       try {
         const response = await axios.get(
-          `${BaseUrl}/api/album/get/6976425b7af04a2b9f8da4f1`
+          `${BaseUrl}/api/album/get/69921b8ce8656d3c3e221653`
         );
   
         // console.log("the response of the albums", response.data.data);
